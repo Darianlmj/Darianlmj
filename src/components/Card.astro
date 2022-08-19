@@ -1,18 +1,28 @@
 ---
 export interface Props {
 	title: string;
+  techStack: String[];
 	body: string;
 	href: string;
 }
-const { href, title, body } = Astro.props;
+const { href, title, techStack, body } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
+	<a href={href} target="_blank">
 		<h2>
 			{title}
 			<span>&rarr;</span>
 		</h2>
+    <div>
+      {
+        techStack.map((tech: String) => (
+          <span class="tech-stack">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
 		<p>
 			{body}
 		</p>
@@ -27,11 +37,13 @@ const { href, title, body } = Astro.props;
 		list-style: none;
 		display: flex;
 		padding: 0.15rem;
-		background-image: var(--link-gradient);
+    margin: 1rem 0;
+    border-left: 0.4rem solid #0059e1;
 		background-size: 400%;
 		border-radius: 0.5rem;
 		background-position: 100%;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: -0.2rem 0.3rem 0.5rem -0.1rem rgba(0,0,0,0.1);
 	}
 
 	.link-card > a {
@@ -44,6 +56,17 @@ const { href, title, body } = Astro.props;
 		background-color: white;
 		opacity: 0.8;
 	}
+
+  .tech-stack {
+    display: inline-block;
+    margin: 0.5rem 0.2rem 0 0.2rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem;
+    background-color: #cadfff;
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
 
 	h2 {
 		margin: 0;
