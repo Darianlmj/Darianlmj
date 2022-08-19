@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/react': 1.0.0
-  '@nanostores/react': ^0.3.0
+  '@nanostores/react': 0.3.0
   '@stitches/react': 1.2.8
   '@types/react': 18.0.17
   '@typescript-eslint/eslint-plugin': 5.32.0
@@ -10,7 +10,7 @@ specifiers:
   astro: 1.0.6
   eslint: 8.22.0
   eslint-plugin-react: 7.30.1
-  nanostores: ^0.6.0
+  nanostores: 0.6.0
   react: 18.2.0
   react-dom: 18.2.0
   typescript: 4.7.4
