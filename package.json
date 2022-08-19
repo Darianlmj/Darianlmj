@@ -13,7 +13,7 @@
   "devDependencies": {
     "@astrojs/react": "0.4.2",
     "@stitches/react": "1.2.8",
-    "@types/react": "18.0.15",
+    "@types/react": "18.0.17",
     "@typescript-eslint/eslint-plugin": "5.32.0",
     "@typescript-eslint/parser": "5.32.0",
     "astro": "1.0.0-rc.3",
