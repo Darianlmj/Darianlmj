@@ -1,0 +1,39 @@
+---
+export interface Props {
+  content: String
+}
+
+const { content } = Astro.props;
+---
+<div class="container">
+  <h1 class="description">
+    {content}
+    &nbsp;
+  </h1>
+</div>
+  
+<style>
+  h1 {
+		margin: 0rem 0;
+    font-weight: 700;
+    font-size: var(--font-size-xxl);
+	}
+
+  .container {
+    display: inline-block;
+  }
+
+  .description {
+    overflow: hidden;
+    border-right: 0.4rem solid var(--color-primary);
+    white-space: nowrap;
+    animation: typing 1.5s forwards; 
+    animation-iteration-count: 1;
+    width: 0;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+</style>
