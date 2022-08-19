@@ -9,20 +9,23 @@ const skills = {
 }
 ---
 
-<Layout title="Welcome to Astro."> 
+<Layout title="Home | Darianlmj"> 
 	<main>
-    <div class="flexy-box">
+    <!-- <div class="flexy-box">
       <div class="flex-content">
-        <h5>Hi there! My name is</h5>
-        <h1>Darian Lee</h1>
+        <h3>Hi there! My name is</h3>
+        <h1 class="">Darian Lee</h1>
       </div>
-      <div class="flex-content">
-        <p>
-          An aspiring software engineer based in Sydney, Australia.
-          Passionate about all things web development by taking on projects one at a time.
-          Hoping to have the opportunity to contribute to exciting projects in the future as a frontend engineer.
-        </p>
-      </div>
+    </div>
+    <p class="description">
+      I enjoy experimenting and developing with new frontend technologies.
+    </p> -->
+    <div class="interactive-bar">
+      <h3 class="introduction">Hi there! My name is</h3>
+      <h1 class="introduction">Darian Lee</h1>
+      <p class="description">
+        I'm an aspiring software engineer based in Sydney, Australia. I enjoy experimenting with new frontend technologies and hope to have the opportunity to contribute to exciting projects in the future as a frontend engineer. <span class="blinking-cursor">|</span>
+      </p>
     </div>
     <div class="flexy-box">
       <div class="flex-content">
@@ -78,12 +81,13 @@ const skills = {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
 	}
 
-  h2 {
+  h2, h3 {
     margin: 0;
   }
 
 	h1 {
 		margin: 0.5rem 0;
+    font-weight: 500;
     font-size: var(--font-size-xxl);
 	}
 
@@ -92,7 +96,7 @@ const skills = {
   }
 
 	main {
-		margin: auto;
+		margin: 0 auto;
 		padding: 1em;
 		max-width: 60ch;
 	}
@@ -159,5 +163,58 @@ const skills = {
 
   .centered-box {
     display: flex;
+  }
+
+  .interactive-bar {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgb(50 50 93 / 10%);
+    color: #445d6e;
+    font-family: Open Sans,Helvetica,Arial,sans-serif;
+    margin: 0 0 20px;
+    padding: 20px 25px;
+    /* white-space: pre-wrap; */
+  }
+
+  .blinking-cursor {
+    /* -webkit-animation: blink .9s infinite; */
+    animation: blink .9s infinite;
+    color: #6772e5;
+    font-size: 22px;
+    line-height: 0;
+  }
+
+  @keyframes blink {
+    0% {
+      color: #6772e5;
+    }
+    49% {
+      color: #6772e5;
+    }
+    50% {
+      color: transparent;
+    }
+    100% {
+      color: transparent;
+    }
+  }
+
+  .introduction {
+    color: var(--color-text);
+  }
+
+  .description {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: wrap;
+    /* margin: 0 auto; Gives that scrolling effect as the typing happens */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
   }
 </style>
