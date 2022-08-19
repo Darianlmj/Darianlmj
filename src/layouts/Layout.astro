@@ -1,5 +1,6 @@
 ---
 import Stitches from "./Stitches.astro";
+import NavBar from "@components/NavBar";
 
 export interface Props {
 	title: string;
@@ -19,6 +20,7 @@ const { title } = Astro.props as Props;
 		<Stitches />
 	</head>
 	<body>
+    <NavBar />
 		<slot />
 	</body>
 </html>
@@ -32,9 +34,10 @@ const { title } = Astro.props as Props;
     --font-size-xxl: clamp(43.95px, 2.18vw + 35.22px, 63.15px);
     --font-size-xxxl: clamp(54.93px, 3.32vw + 41.64px, 84.17px);
 
-		--color-text: hsl(12, 5%, 4%);
+		--color-text: hsl(0, 5%, 4%);
 		--color-bg: hsl(0, 0%, 98%);
 		--color-border: hsl(17, 24%, 90%);
+    --color-primary: hsl(214, 78%, 38%);
 	}
 
 	html {
@@ -46,10 +49,6 @@ const { title } = Astro.props as Props;
 
 	body {
 		margin: 0;
-	}
-
-	:global(h1) {
-		font-size: var(--font-size-xl);
 	}
 
 	:global(h2) {

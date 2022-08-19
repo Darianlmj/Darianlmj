@@ -1,50 +1,95 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import NavBar from "@components/Header";
+
+const skills = {
+  'languages': ['JavaScript', 'TypeScript', 'Python', 'C++', 'C', 'Java', 'HTML', 'CSS'],
+  'frameworks': ['React', 'Vue', 'TailwindCSS', 'NodeJS', 'Express', 'SCSS', 'Astro'],
+  'tools': ['Figma', 'Jira', 'Git', 'GitHub', 'Confluence', 'Docker', 'Firebase']
+}
 ---
 
-<Layout title="Welcome to Astro.">
-  <NavBar />
+<Layout title="Welcome to Astro."> 
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Chat"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+    <div class="flexy-box">
+      <div class="flex-content">
+        <h5>Hi there! My name is</h5>
+        <h1>Darian Lee</h1>
+      </div>
+      <div class="flex-content">
+        <p>
+          An aspiring software engineer based in Sydney, Australia.
+          Passionate about all things web development by taking on projects one at a time.
+          Hoping to have the opportunity to contribute to exciting projects in the future as a frontend engineer.
+        </p>
+      </div>
+    </div>
+    <div class="flexy-box">
+      <div class="flex-content">
+        {
+          
+        }
+      </div>
+      <div class="flex-content centered-box">  
+        <h2>Tech Stack</h2>
+        <p>Here are some of the technologies that I've worked with.</p>
+        <div class='tech-stack'>
+          <p class="tech">Languages</p>
+          <p class="tech">Frameworks</p>
+          <p class="tech">Tools</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex-content centered-box"> 
+      <h2>Projects</h2>
+      <p>Here's some of the things that I've contributed and worked on in the past.</p>
+      <div class="card-list">
+        <Card 
+          href="https://jobsboard.staging.csesoc.unsw.edu.au/"
+				  title="CSESoc Jobs Board"
+          techStack={['Vue', 'TypeScript', 'Express', 'Swagger', 'Postgres', 'TailwindCSS', 'Docker']}
+				  body="A web application where CSE students are able to find jobs."
+        />
+        <Card 
+          href="https://circles.csesoc.app/"
+				  title="Circles"
+          techStack={['Vue', 'NodeJS', 'Express', 'Swagger', 'Postgres', 'TailwindCSS']}
+				  body="A degree planner for UNSW students."
+        />
+        <Card 
+          href="https://darianlmj.dev/"
+				  title="Portfolio Website"
+          techStack={['React', 'Typescript', 'Astro', 'Stiches']}
+				  body="The website you're currently on."
+        />
+        <Card 
+          href="https://cookies-sh.web.app/"
+				  title="Cookies.sh"
+          techStack={['React', 'Astro', 'Stitches']}
+				  body="A web application which aims to teach anybody about the basics in security engineering."
+        />
+      </div>
+    </div>
 	</main>
 </Layout>
 
-<style>
+<style lang="css">
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
 	}
 
+  h2 {
+    margin: 0;
+  }
+
 	h1 {
-		margin: 2rem 0;
+		margin: 0.5rem 0;
+    font-size: var(--font-size-xxl);
 	}
+
+  h5 {
+    margin: 0;
+  }
 
 	main {
 		margin: auto;
@@ -88,10 +133,31 @@ import NavBar from "@components/Header";
 		border-radius: 4px;
 		padding: 0.15em 0.25em;
 	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  .flexy-box {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    padding: 5rem 0 0 0;
+  }
+
+  .flex-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 3;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+  }
+
+  .centered-box {
+    display: flex;
+  }
 </style>
