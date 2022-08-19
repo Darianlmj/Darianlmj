@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@astrojs/react': 0.4.3
+  '@astrojs/react': 1.0.0
   '@nanostores/react': ^0.3.0
   '@stitches/react': 1.2.8
   '@types/react': 18.0.17
@@ -21,7 +21,7 @@ dependencies:
   nanostores: 0.6.0
 
 devDependencies:
-  '@astrojs/react': 0.4.3_biqbaboplfbrettd7655fr4n2y
+  '@astrojs/react': 1.0.0_biqbaboplfbrettd7655fr4n2y
   '@stitches/react': 1.2.8_react@18.2.0
   '@types/react': 18.0.17
   '@typescript-eslint/eslint-plugin': 5.32.0_skwyily37mbbeczecumobdn3qa
@@ -113,8 +113,8 @@ packages:
       prismjs: 1.28.0
     dev: true
 
-  /@astrojs/react/0.4.3_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-sWnQt5XD3v6X0i1Fn1imDNUSI2kSDw+XDUTJcSyvbu8FUmeTdVs7QfbjLW8X5PVXOYBn/5QLdaANxPjgTkV4ew==}
+  /@astrojs/react/1.0.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-CHJQ1dwjpYOTunioi02yWKdSxN/YeLP1vI70Xq+AqhcTmcmdbCMwbtYOEVwIK1k/AJmLItsJMcrsTfRoQU+Z+Q==}
     engines: {node: ^14.18.0 || >=16.12.0}
     peerDependencies:
       react: ^17.0.2 || ^18.0.0
