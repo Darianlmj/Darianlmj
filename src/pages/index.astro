@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Typewriter from "@components/Typewriter.astro";
+import TechStackPills from "@components/TechStackPills/index";
 
 const skills = {
   'languages': ['JavaScript', 'TypeScript', 'Python', 'C++', 'C', 'Java', 'HTML', 'CSS'],
@@ -23,11 +24,7 @@ const skills = {
       <div class="flex-content centered-box">  
         <h2>Tech Stack</h2>
         <p>Here are some of the technologies that I've worked with.</p>
-        <div class='tech-stack'>
-          <p class="tech">Languages</p>
-          <p class="tech">Frameworks</p>
-          <p class="tech">Tools</p>
-        </div>
+        <TechStackPills client:load/>
       </div>
       <div class="flex-content">
 
@@ -146,7 +143,32 @@ const skills = {
     justify-content: space-between;
     flex: 3;
     flex-wrap: wrap;
-    padding: 1rem 0;
+    padding: 0 0 1rem 0;
+  }
+
+  .tech-pill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+  }
+
+  .tech-stack > p {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .active-tech-pill {
+    background: #cadfff;
+    color: var(--color-text-secondary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 0.15rem solid var(--color-primary);
   }
 
   .centered-box {
