@@ -85,10 +85,15 @@ const { href, title, techStack, body } = Astro.props;
 
 	.link-card:is(:hover, :focus-within) {
 		background-position: 0;
+    transition-duration: 500ms;
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transform: translateY(-0.2rem);
+    box-shadow: 0.2rem 0.3rem 0.5rem -0.1rem rgba(0,0,0,0.1);
 	}
 
 	.link-card:is(:hover, :focus-within) h2 {
-		color: #4f39fa;
+		color: hsl(216, 100%, 50%);
 	}
 
 	.link-card:is(:hover, :focus-within) h2 span {

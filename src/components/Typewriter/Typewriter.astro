@@ -14,9 +14,10 @@ const { content } = Astro.props;
   
 <style>
   h1 {
-		margin: 0rem 0;
+		margin: 0;
     font-weight: 700;
     font-size: var(--font-size-xxl);
+    opacity: 0.9;
 	}
 
   .container {
@@ -33,7 +34,11 @@ const { content } = Astro.props;
   }
 
   @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from { 
+      width: 0 
+    }
+    to { 
+      width: 100% 
+    }
   }
 </style>
