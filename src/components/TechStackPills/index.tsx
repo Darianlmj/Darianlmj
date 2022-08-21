@@ -1,35 +1,32 @@
 import { PillsContainer, Pills, ActivePill } from './styles';
-import { atom } from 'nanostores';
 import { useStore } from '@nanostores/react';
+import { activePill } from 'src/stores/store';
 
-const pillActive = atom("languages");
 
-const TechStackPills = () => {
-  const $pillActive = useStore(pillActive);
+export const TechStackPills = () => {
+  const $activePill = useStore(activePill);
 
   const changeActivePill = (pill: string) => {
-    pillActive.set(pill);
-  }
+    activePill.set(pill);
+  };
 
   return (
     <PillsContainer>
       {
-        $pillActive === "languages" 
-          ? (<ActivePill onClick={() => changeActivePill("languages")}>Languages</ActivePill>) 
-          : (<Pills onClick={() => changeActivePill("languages")}>Languages</Pills>)
+        $activePill === 'languages' 
+          ? (<ActivePill onClick={() => changeActivePill('languages')}>Languages</ActivePill>) 
+          : (<Pills onClick={() => changeActivePill('languages')}>Languages</Pills>)
       }
       {
-        $pillActive === "frameworks" 
-          ? (<ActivePill onClick={() => changeActivePill("frameworks")}>Frameworks</ActivePill>) 
-          : (<Pills onClick={() => changeActivePill("frameworks")}>Frameworks</Pills>)
+        $activePill === 'frameworks' 
+          ? (<ActivePill onClick={() => changeActivePill('frameworks')}>Frameworks</ActivePill>) 
+          : (<Pills onClick={() => changeActivePill('frameworks')}>Frameworks</Pills>)
       }
       {
-        $pillActive === "tools" 
-          ? (<ActivePill onClick={() => changeActivePill("tools")}>Tools</ActivePill>) 
-          : (<Pills onClick={() => changeActivePill("tools")}>Tools</Pills>)
+        $activePill === 'tools' 
+          ? (<ActivePill onClick={() => changeActivePill('tools')}>Tools</ActivePill>) 
+          : (<Pills onClick={() => changeActivePill('tools')}>Tools</Pills>)
       }
     </PillsContainer>
   );
 };
-
-export default TechStackPills;
