@@ -1,27 +1,38 @@
-import { Nav, Link, NavItem, NavWrapper, NavList, NavListItem, NavBarBrand } from './styles';
+import {
+  Nav,
+  Button,
+  Link,
+  NavItem,
+  NavWrapper,
+  NavList,
+  NavListItem,
+  NavBarBrand,
+} from './styles';
 
 const NavBar = () => {
   return (
     <Nav>
       <NavItem>
-        <NavBarBrand href='/'>Darianlmj</NavBarBrand>
+        <NavBarBrand href="/">Darianlmj</NavBarBrand>
       </NavItem>
       <NavItem>
         <NavWrapper>
           <NavList>
             <NavListItem>
-              <Link 
-                onClick={() => document.getElementById('resume').scrollIntoView({ behavior: 'smooth' })}
-              >
+              <Link href="src/assets/Resume.pdf" download>
                 Resume
               </Link>
             </NavListItem>
             <NavListItem>
-              <Link 
-                onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+              <Button
+                onClick={() =>
+                  document
+                    .getElementById('projects')
+                    .scrollIntoView({ behavior: 'smooth' })
+                }
               >
                 Projects
-              </Link>
+              </Button>
             </NavListItem>
           </NavList>
         </NavWrapper>

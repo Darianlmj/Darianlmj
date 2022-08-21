@@ -30,7 +30,33 @@ export const Link = styled('a', {
     height: '2px',
     bottom: -5,
     left: 0,
-    backgroundColor: 'var(--color-primary)',
+    backgroundColor: 'var(--color-text)',
+    transform: 'scaleX(0)',
+    transition: 'transform 0.3s ease-in-out',
+  },
+
+  '&:hover::before': {
+    transform: 'scaleX(1)',
+  }
+});
+
+export const Button = styled('div', {
+  color: 'var(--color-text-secondary)',
+  marginRight: '1rem',
+  textDecoration: 'none',
+  position: 'relative',
+  cursor: 'pointer',
+  
+
+  '&::before': {
+    content: '',
+    position: 'absolute',
+    display: 'inline-block',
+    width: '100%',
+    height: '2px',
+    bottom: -5,
+    left: 0,
+    backgroundColor: 'var(--color-text)',
     transform: 'scaleX(0)',
     transition: 'transform 0.3s ease-in-out',
   },

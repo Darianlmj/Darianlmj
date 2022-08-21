@@ -5,40 +5,28 @@ export const PillsContainer = styled('div', {
   width: '100%',
   alignItems: 'center',
   flexDirection: 'row',
-  justifyContent: 'space-around',
+  justifyContent: 'flex-start',
   flexWrap: 'wrap',
   padding: '0 0 1.2rem 0',
 });
 
-export const Pills = styled('div', {
+export const InactivePill = styled('div', {
   display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
-  background: 'var(--color-bg)',
-  color: 'var(--color-text)',
-  padding: '0.2rem 0.5rem',
-  borderRadius: '0.4rem',
+  height: '1.2rem',
+  color: 'black',
+  padding: '0.3rem 2rem 0.3rem 0',
+  fontWeight: '600',
   cursor: 'pointer',
-  margin: 0,
-});
-
-export const CenteredBox = styled('div', {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  margin: '1rem 0 0 0'
 });
 
 export const ActivePill = styled('div', {
   display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
-  background: '#cadfff',
   height: '1.2rem',
-  color: 'var(--color-text)',
-  padding: '0.2rem 0.25rem',
-  borderRadius: '2rem',
+  color: 'var(--blue-10)',
+  padding: '0.3rem 2rem 0.3rem 0',
+  fontWeight: '600',
   cursor: 'pointer',
-  border: '0.15rem solid var(--color-primary)',
 });
   

@@ -4,6 +4,7 @@ import Card from "../components/Card/Card.astro";
 import Typewriter from "@components/Typewriter/Typewriter.astro";
 import { TechStackDisplay } from "@components/TechStackDisplay";
 import { TechStackPills } from "@components/TechStackPills";
+
 ---
 
 <Layout title="Home | Darianlmj"> 
@@ -14,6 +15,10 @@ import { TechStackPills } from "@components/TechStackPills";
       />
       <h3 class="introduction">a software engineer based in Sydney, Australia.</h3>
       <p>I love experimenting and developing with new exciting frontend technologies.</p>
+      <div class="buttonContainer">
+        <a href='src/assets/Resume.pdf' download>Resume</a>
+        <button onclick="document.getElementById('get-in-touch').scrollIntoView({ behavior: 'smooth' })">Get In Touch</button>
+      </div>
     </div>
     <div class="flexy-box">
       <div class="flex-content centered-box">  
@@ -71,10 +76,6 @@ import { TechStackPills } from "@components/TechStackPills";
 </Layout>
 
 <style lang="css">
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-	}
-
   h2, h3 {
     margin: 0;
     opacity: 0.9;
@@ -191,5 +192,32 @@ import { TechStackPills } from "@components/TechStackPills";
 
   .introduction {
     color: var(--color-text);
+  }
+
+  .buttonContainer {
+    display: flex;
+    width:35%;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+    padding: 0 0 1rem 0;
+    margin-top: 1.5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a, button {
+    background: var(--color-bg);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--blue-12);
+    cursor: pointer;
+    font-size: var(--font-size-small);
+    font-weight: bold;
   }
 </style>

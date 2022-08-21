@@ -29,16 +29,12 @@ const { href, title, techStack, body } = Astro.props;
 	</a>
 </li>
 <style>
-	:root {
-		--link-gradient: linear-gradient(45deg, #4f39fa, #da62c4 30%, var(--color-border) 60%);
-	}
-
 	.link-card {
 		list-style: none;
 		display: flex;
 		padding: 0.15rem;
     margin: 1rem 0;
-    border-left: 0.4rem solid var(--color-primary);
+    border-left: 0.4rem solid var(--blue-10);
 		background-size: 400%;
 		border-radius: 0.5rem;
 		background-position: 100%;
@@ -62,7 +58,7 @@ const { href, title, techStack, body } = Astro.props;
     margin: 0.5rem 0.2rem 0 0.2rem;
     padding: 0.1rem 0.2rem;
     border-radius: 0.2rem;
-    background-color: #cadfff;
+    background-color: var(--blue-4);
     color: var(--text-color);
     font-size: 0.8rem;
     font-weight: bold;
