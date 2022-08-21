@@ -1,18 +1,22 @@
 ---
+import Email from 'src/assets/Email.svg';
+import Github from 'src/assets/Github.svg';
+import LinkedIn from 'src/assets/LinkedIn.svg';
 ---
+
 <footer>
   <div class="container">
     <div class="col item social">
       <h3 id="get-in-touch">Get In Touch</h3>
       <div class="links">
-        <a href="mailto: darianlmj@gmail.com">
-          <i class="icon ion-email" />
+        <a href="mailto: darianlmj@gmail.com" target="_blank">
+          <img src={Email} width="28px" height="28px" alt="Email" />
         </a>
-        <a href="https://github.com/Darianlmj/">
-          <i class="icon ion-social-github" />
+        <a href="https://github.com/Darianlmj/" target="_blank">
+          <img src={Github} alt="Github" />
         </a>
-        <a href="https://www.linkedin.com/in/darianlmj/">
-          <i class="icon ion-social-linkedin" />
+        <a href="https://www.linkedin.com/in/darianlmj/" target="_blank">
+          <img src={LinkedIn} alt="LinkedIn" />
         </a>
       </div>
     </div>
@@ -25,7 +29,7 @@
     display: flex;
     justify-content: center;
     margin: 3rem auto 0 auto;
-		padding: 2rem 0;
+    padding: 2rem 0;
     color: #000000;
     background-color: #fff;
     box-shadow: 0 -2px 4px rgb(50 50 93 / 10%);
