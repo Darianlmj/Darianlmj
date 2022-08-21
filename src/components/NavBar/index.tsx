@@ -1,12 +1,6 @@
-import { Nav, MobileIcon, Link, NavItem, NavWrapper, NavList, NavListItem, NavBarBrand } from './styles';
-import { atom } from 'nanostores';
-import { useStore } from '@nanostores/react';
+import { Nav, Link, NavItem, NavWrapper, NavList, NavListItem, NavBarBrand } from './styles';
 
 const NavBar = () => {
-  const smoothScroll = () => {
-    
-  }
-
   return (
     <Nav>
       <NavItem>
@@ -24,7 +18,7 @@ const NavBar = () => {
             </NavListItem>
             <NavListItem>
               <Link 
-               onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
               >
                 Projects
               </Link>

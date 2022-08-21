@@ -15,22 +15,22 @@ export const TechStackPills = () => {
       <CenteredBox>
         {
           $activePill === 'languages' 
-          ? (<ActivePill onClick={() => changeActivePill('languages')}>Languages</ActivePill>) 
-          : (<Pills onClick={() => changeActivePill('languages')}>Languages</Pills>)
+            ? (<ActivePill onClick={() => changeActivePill('languages')}>Languages</ActivePill>) 
+            : (<Pills onClick={() => changeActivePill('languages')}>Languages</Pills>)
         }
       </CenteredBox>
       <CenteredBox>
         {
           $activePill === 'frameworks' 
-          ? (<ActivePill onClick={() => changeActivePill('frameworks')}>Frameworks</ActivePill>) 
-          : (<Pills onClick={() => changeActivePill('frameworks')}>Frameworks</Pills>)
+            ? (<ActivePill onClick={() => changeActivePill('frameworks')}>Frameworks</ActivePill>) 
+            : (<Pills onClick={() => changeActivePill('frameworks')}>Frameworks</Pills>)
         }
       </CenteredBox>
       <CenteredBox>
         {
           $activePill === 'tools' 
-          ? (<ActivePill onClick={() => changeActivePill('tools')}>Tools</ActivePill>) 
-          : (<Pills onClick={() => changeActivePill('tools')}>Tools</Pills>)
+            ? (<ActivePill onClick={() => changeActivePill('tools')}>Tools</ActivePill>) 
+            : (<Pills onClick={() => changeActivePill('tools')}>Tools</Pills>)
         }
       </CenteredBox>
     </PillsContainer>

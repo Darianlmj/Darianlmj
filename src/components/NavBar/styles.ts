@@ -12,20 +12,6 @@ export const NavItem = styled('div', {
   zIndex: 10,
 });
 
-export const MobileIcon = styled('div', {
-  display: 'none',
-  color: '#fffafa',
-  '@media screen and (max-width: 768px)': {
-    display: 'block',
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    transform: 'translateY(-100%, 40%)',
-    fontSize: '1.8rem',
-    cursor: 'pointer'
-  }
-});
-
 export const Link = styled('a', {
   color: 'var(--color-text-secondary)',
   marginRight: '1rem',
