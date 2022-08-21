@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <Nav>
       <NavItem>
-        <NavBarBrand href="/">Darianlmj</NavBarBrand>
+        <NavBarBrand src='src/assets/Profile.png' ></NavBarBrand>
       </NavItem>
       <NavItem>
         <NavWrapper>

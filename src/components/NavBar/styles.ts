@@ -81,14 +81,10 @@ export const NavListItem = styled('li', {
   listStyle: 'none'
 });
 
-export const NavBarBrand = styled('a', {
-  fontSize: 'var(--font-size-lg)',
-  fontWeight: 'bold',
+export const NavBarBrand = styled('img', {
+  width: '3rem',
+  height: '3rem',
   marginLeft: '1rem',
-  width: 'fit-content',
-  letterSpacing: '0.05rem',
-  color: 'var(--color-text)',
-  textDecoration: 'none',
 });
   
 

@@ -4,15 +4,17 @@
   <div class="container">
     <div class="col item social">
       <h3 id="get-in-touch">Get In Touch</h3>
-      <a href="mailto: darianlmj@gmail.com">
-        <i class="icon ion-email" />
-      </a>
-      <a href="https://github.com/Darianlmj/">
-        <i class="icon ion-social-github" />
-      </a>
-      <a href="https://www.linkedin.com/in/darianlmj/">
-        <i class="icon ion-social-linkedin" />
-      </a>
+      <div class="links">
+        <a href="mailto: darianlmj@gmail.com">
+          <i class="icon ion-email" />
+        </a>
+        <a href="https://github.com/Darianlmj/">
+          <i class="icon ion-social-github" />
+        </a>
+        <a href="https://www.linkedin.com/in/darianlmj/">
+          <i class="icon ion-social-linkedin" />
+        </a>
+      </div>
     </div>
     <p class="statement">Made with ❤ in 2022</p>
   </div>
@@ -53,18 +55,25 @@
     text-align: center;
   }
 
-  footer .item.social > a {
-    font-size: 20px;
-    width: 36px;
-    height: 36px;
+  footer .links > a {
+    font-size: var(--font-size-md);
+    width: 3rem;
+    height: 3rem;
     line-height: 36px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border-radius: 50%;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
     margin: 0 8px;
-    color: #000000;
-    opacity: 0.75;
+    color: var(--color-text);
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   footer .item.social > a:hover {
@@ -74,7 +83,7 @@
   footer .statement {
     text-align: center;
     color: var(--color-text-secondary);
-    font-size: 0.75rem;
+    font-size: var(--font-size-sm);
     margin: 2rem 0 0.5rem 0;
   }
 </style>
