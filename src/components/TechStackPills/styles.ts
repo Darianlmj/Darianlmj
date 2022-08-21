@@ -24,7 +24,7 @@ export const ActivePill = styled('div', {
   display: 'flex',
   alignItems: 'center',
   height: '1.2rem',
-  color: 'var(--blue-10)',
+  color: 'var(--blue-11)',
   padding: '0.3rem 2rem 0.3rem 0',
   fontWeight: '600',
   cursor: 'pointer',
