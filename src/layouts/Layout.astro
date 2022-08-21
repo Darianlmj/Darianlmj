@@ -1,6 +1,7 @@
 ---
 import Stitches from "./Stitches.astro";
 import NavBar from "@components/NavBar";
+import Footer from "@components/Footer/Footer.astro";
 
 export interface Props {
 	title: string;
@@ -23,12 +24,14 @@ const { title } = Astro.props as Props;
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
 		<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"/> 
 		<title>{title}</title>
 		<Stitches />
 	</head>
 	<body>
     <NavBar client:load />
 		<slot />
+    <Footer />
 	</body>
 </html>
 <style>

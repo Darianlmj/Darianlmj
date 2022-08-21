@@ -4,6 +4,9 @@ export const Nav = styled('header', {
   display: 'grid',
   gridTemplateColumns: '1fr auto auto',
   padding: '1rem',
+  // borderBottom: '0.1rem solid var(--color-text)',
+  boxShadow: '0 2px 4px rgb(50 50 93 / 10%)',
+  backgroundColor: '#fff',
 });
 
 export const NavItem = styled('div', {
