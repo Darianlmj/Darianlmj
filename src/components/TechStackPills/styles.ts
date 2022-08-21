@@ -5,15 +5,13 @@ export const PillsContainer = styled('div', {
   width: '100%',
   alignItems: 'center',
   flexDirection: 'row',
-  justifyContent: 'space-between',
-  flex: 3,
+  justifyContent: 'space-around',
   flexWrap: 'wrap',
   padding: '0 0 1.2rem 0',
 });
 
 export const Pills = styled('div', {
   display: 'flex',
-  flex: 1,
   justifyContent: 'center',
   alignItems: 'center',
   background: 'var(--color-bg)',
@@ -24,9 +22,15 @@ export const Pills = styled('div', {
   margin: 0,
 });
 
+export const CenteredBox = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  margin: '1rem 0 0 0'
+});
+
 export const ActivePill = styled('div', {
   display: 'flex',
-  flex: 1,
   justifyContent: 'center',
   alignItems: 'center',
   background: '#cadfff',

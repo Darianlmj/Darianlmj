@@ -26,7 +26,7 @@ import { TechStackPills } from "@components/TechStackPills";
       </div>
     </div>
     <div class="flex-content centered-box"> 
-      <h2>Projects</h2>
+      <h2 id="projects">Projects</h2>
       <p>Here's some of the things that I've contributed and worked on in the past.</p>
       <div class="card-list">
         <Card 
@@ -44,13 +44,13 @@ import { TechStackPills } from "@components/TechStackPills";
         <Card 
           href="https://darianlmj.dev/"
 				  title="Portfolio Website"
-          techStack={['React', 'Typescript', 'Astro', 'Stiches']}
+          techStack={['React', 'Typescript', 'Astro', 'Stitches']}
 				  body="The website you're currently on."
         />
         <Card 
           href="https://cookies-sh.web.app/"
 				  title="Cookies.sh"
-          techStack={['React', 'Astro', 'Stitches']}
+          techStack={['React', 'TypeScript', 'MUI']}
 				  body="A web application which aims to teach anybody about the basics in security engineering."
         />
       </div>
@@ -78,7 +78,7 @@ import { TechStackPills } from "@components/TechStackPills";
 	main {
 		margin: 0 auto;
 		padding: 1em;
-		max-width: 60ch;
+		max-width: 80ch;
 	}
 
 	.text-gradient {
@@ -121,7 +121,7 @@ import { TechStackPills } from "@components/TechStackPills";
     display: flex;
     flex-direction: row;
     flex: 2;
-    padding: 3rem 0 0 0;
+    padding: 3rem 0 3rem 0;
   }
 
   .flex-content {
@@ -129,7 +129,6 @@ import { TechStackPills } from "@components/TechStackPills";
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
   }
 
   .tech-stack {
@@ -169,7 +168,7 @@ import { TechStackPills } from "@components/TechStackPills";
   .centered-box {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .interactive-bar {

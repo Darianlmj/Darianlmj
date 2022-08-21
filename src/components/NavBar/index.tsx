@@ -2,21 +2,13 @@ import { Nav, MobileIcon, Link, NavItem, NavWrapper, NavList, NavListItem, NavBa
 import { atom } from 'nanostores';
 import { useStore } from '@nanostores/react';
 
-const isToggled = atom(false);
-
 const NavBar = () => {
-
-  const $isToggled = useStore(isToggled);
-
-  const toggle = () => {
-    isToggled.set(!$isToggled);
-  };
+  const smoothScroll = () => {
+    
+  }
 
   return (
     <Nav>
-      <MobileIcon onClick={toggle}>
-        {/* <FaBars /> */}
-      </MobileIcon>
       <NavItem>
         <NavBarBrand href='/'>Darianlmj</NavBarBrand>
       </NavItem>
@@ -24,10 +16,18 @@ const NavBar = () => {
         <NavWrapper>
           <NavList>
             <NavListItem>
-              <Link href='/'>Resume</Link>
+              <Link 
+                onClick={() => document.getElementById('resume').scrollIntoView({ behavior: 'smooth' })}
+              >
+                Resume
+              </Link>
             </NavListItem>
             <NavListItem>
-              <Link href='/resume'>Projects</Link>
+              <Link 
+               onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+              >
+                Projects
+              </Link>
             </NavListItem>
           </NavList>
         </NavWrapper>

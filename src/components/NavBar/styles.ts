@@ -27,11 +27,11 @@ export const MobileIcon = styled('div', {
 });
 
 export const Link = styled('a', {
-  color: '#000',
-  // opacity: 0.72,
+  color: 'var(--color-text-secondary)',
   marginRight: '1rem',
   textDecoration: 'none',
   position: 'relative',
+  cursor: 'pointer',
 
   '&::before': {
     content: '',
@@ -41,7 +41,7 @@ export const Link = styled('a', {
     height: '2px',
     bottom: -5,
     left: 0,
-    backgroundColor: '#000',
+    backgroundColor: 'var(--color-primary)',
     transform: 'scaleX(0)',
     transition: 'transform 0.3s ease-in-out',
   },
@@ -72,7 +72,7 @@ export const NavBarBrand = styled('a', {
   marginLeft: '1rem',
   width: 'fit-content',
   letterSpacing: '0.05rem',
-  color: 'var(--color-primary)',
+  color: 'var(--color-text)',
   textDecoration: 'none',
 });
   
