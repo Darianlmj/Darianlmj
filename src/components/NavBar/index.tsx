@@ -1,3 +1,4 @@
+import image from 'src/assets/Profile.png';
 import {
   Nav,
   Button,
@@ -14,7 +15,7 @@ const NavBar = () => {
     <Nav>
       <NavItem>
         <NavBarBrand 
-          src='src/assets/Profile.png' 
+          src={image}
           alt='Darianlmj'
         />
       </NavItem>
