@@ -24,7 +24,7 @@ const NavBar = () => {
           <NavList>
             <NavListItem>
               <Link 
-                href="src/assets/Resume.pdf" 
+                href='src/assets/Resume.pdf' 
                 download
               >
                 Resume

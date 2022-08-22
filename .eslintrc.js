@@ -38,6 +38,11 @@ module.exports = {
             "error",
             "always"
         ],
-        "react/react-in-jsx-scope": "off"
+        "jsx-quotes": [
+            "error",
+            "prefer-single"
+        ],
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-explicit-any": "off"
     }
 }
