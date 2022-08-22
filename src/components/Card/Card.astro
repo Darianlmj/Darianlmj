@@ -12,7 +12,7 @@ const { href, title, techStack, body } = Astro.props;
 	<a href={href} target="_blank">
 		<h2>
 			{title}
-			<span>&rarr;</span>
+			<span class="arrow">&rarr;</span>
 		</h2>
     <div>
       {
@@ -95,4 +95,10 @@ const { href, title, techStack, body } = Astro.props;
 	.link-card:is(:hover, :focus-within) h2 span {
 		transform: translateX(2px);
 	}
+
+  @media screen and (max-width: 380px) {
+    .arrow {
+      display: none;
+    }
+  }
 </style>

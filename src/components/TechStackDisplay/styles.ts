@@ -9,7 +9,11 @@ export const DisplayContainer = styled('div', {
   flex: 3,
   flexWrap: 'wrap',
   padding: '0 0 1.2rem 0',
-  margin: '0 10%'
+  margin: '0 10%',
+
+  '@media screen and (max-width: 380px)': {
+    justifyContent: 'center',
+  }
 });
 
 export const Pill = styled('div', {

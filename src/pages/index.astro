@@ -14,13 +14,13 @@ import { TechStackPills } from "@components/TechStackPills";
         content="Hey! I'm Darian"
       />
       <h2 class="introduction">a software engineer based in Sydney, Australia.</h2>
-      <p>I love experimenting and developing with exciting new frontend technologies.</p>
+      <p class="introduction-description">I love experimenting and developing with exciting new frontend technologies.</p>
       <div class="buttonContainer">
         <a href='src/assets/Resume.pdf' download>Resume</a>
         <button onclick="document.getElementById('get-in-touch').scrollIntoView({ behavior: 'smooth' })">Get In Touch</button>
       </div>
     </div>
-    <div class="flexy-box">
+    <div class="flexy-box flexy-box-small-screen">
       <div class="flex-content centered-box">  
         <h2>Tech Stack</h2>
         <p>Here are some of the technologies that I've worked with.</p>
@@ -233,11 +233,28 @@ import { TechStackPills } from "@components/TechStackPills";
   @media screen and (max-width: 850px) {
     .buttonContainer {
       flex-direction: column;
-      align-items: flex-start;
       width: 100%;
     }
     .buttonContainer button{
       margin-top: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .centered-box {
+      align-items: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .flexy-box-small-screen {
+      flex-direction: column;
+    }
+
+    .introduction {
+      text-align: center;
     }
   }
 </style>

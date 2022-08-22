@@ -8,6 +8,10 @@ export const PillsContainer = styled('div', {
   justifyContent: 'flex-start',
   flexWrap: 'wrap',
   padding: '0 0 1.2rem 0',
+
+  '@media screen and (max-width: 380px)': {
+    flexDirection: 'column',
+  }
 });
 
 export const InactivePill = styled('div', {
@@ -18,6 +22,10 @@ export const InactivePill = styled('div', {
   padding: '0.3rem 2rem 0.3rem 0',
   fontWeight: '600',
   cursor: 'pointer',
+
+  '@media screen and (max-width: 380px)': {
+    padding: '0.3rem 0'
+  }
 });
 
 export const ActivePill = styled('div', {
@@ -28,5 +36,9 @@ export const ActivePill = styled('div', {
   padding: '0.3rem 2rem 0.3rem 0',
   fontWeight: '600',
   cursor: 'pointer',
+
+  '@media screen and (max-width: 380px)': {
+    padding: '0.3rem 0'
+  }
 });
   

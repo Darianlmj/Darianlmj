@@ -6,14 +6,8 @@ export interface Props {
 const { content } = Astro.props;
 ---
 <div class="container">
-  <h1 class="description large-screen">
-    {content}
-    &nbsp;
-  </h1>
-  <h1 class="description small-screen">
-    {content}
-    &nbsp;
-  </h1>
+  <h1 class="description large-screen">{content}&nbsp;</h1>
+  <h1 class="description small-screen">{content}</h1>
 </div>
   
 <style>
@@ -61,6 +55,7 @@ const { content } = Astro.props;
 
     .small-screen {
       display: inline-block;
+      text-align: center;
     }
   }
 </style>
