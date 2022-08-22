@@ -9,6 +9,10 @@ export const skills = [{
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
     }, 
     {
+      name: 'LaTeX',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg'
+    },
+    {
       name: 'Python',
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
     }, 
@@ -32,6 +36,10 @@ export const skills = [{
       name: 'JavaScript',
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
     },
+    {
+      name: 'Markdown',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg'
+    }
   ],
   'frameworks': [
     {
@@ -42,6 +50,10 @@ export const skills = [{
       name: 'Vue',
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
     }, 
+    {
+      name: 'FastAPI',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg'
+    },
     {
       name: 'TailwindCSS',
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg'
@@ -61,6 +73,10 @@ export const skills = [{
     {
       name: 'Astro',
       link: 'https://raw.githubusercontent.com/withastro/astro/main/assets/brand/logo.svg'
+    }, 
+    {
+      name: 'Material UI',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg'
     }
   ],
   'tools': [
@@ -91,6 +107,10 @@ export const skills = [{
     {
       name: 'Firebase',
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg'
+    }, 
+    {
+      name: 'ESLint',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg'
     }
   ]
 }];
