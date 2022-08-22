@@ -6,7 +6,11 @@ export interface Props {
 const { content } = Astro.props;
 ---
 <div class="container">
-  <h1 class="description">
+  <h1 class="description large-screen">
+    {content}
+    &nbsp;
+  </h1>
+  <h1 class="description small-screen">
     {content}
     &nbsp;
   </h1>
@@ -23,14 +27,22 @@ const { content } = Astro.props;
   .container {
     display: inline-block;
   }
-
+  
   .description {
-    overflow: hidden;
+    width: fit-content;
+  }
+
+  .large-screen {
+    overflow: visible;
     border-right: 0.4rem solid var(--blue-12);
     white-space: nowrap;
     animation: typing 1.5s forwards; 
     animation-iteration-count: 1;
     width: 0;
+  }
+
+  .small-screen {
+    display: none;
   }
 
   @keyframes typing {
@@ -39,6 +51,16 @@ const { content } = Astro.props;
     }
     to { 
       width: 100% 
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .description {
+      display: none;
+    }
+
+    .small-screen {
+      display: inline-block;
     }
   }
 </style>
