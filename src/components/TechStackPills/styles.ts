@@ -19,10 +19,17 @@ export const InactivePill = styled('div', {
   alignItems: 'center',
   height: '1.2rem',
   color: 'black',
-  padding: '0.3rem 2rem 0.3rem 0',
+  padding: '0.3rem 0.5rem',
   fontWeight: '600',
   cursor: 'pointer',
-
+  marginRight: '0.5rem',
+  transition: 'all 0.15s ease-in-out',
+  
+  '&:hover': {
+    backgroundColor: 'var(--blue-3)',
+    borderRadius: '0.3rem',
+  },
+  
   '@media screen and (max-width: 380px)': {
     padding: '0.3rem 0'
   }
@@ -33,7 +40,10 @@ export const ActivePill = styled('div', {
   alignItems: 'center',
   height: '1.2rem',
   color: 'var(--blue-11)',
-  padding: '0.3rem 2rem 0.3rem 0',
+  padding: '0.3rem 0.5rem',
+  marginRight: '0.5rem',
+  backgroundColor: 'var(--blue-3)',
+  borderRadius: '0.3rem',
   fontWeight: '600',
   cursor: 'pointer',
 

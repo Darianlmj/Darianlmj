@@ -1,4 +1,9 @@
-export const skills = [{
+export type SkillItem = {
+  name: string;
+  link: string;
+}
+
+export const skills: Record<string, SkillItem[]> = {
   'languages': [
     {
       name: 'C',
@@ -39,7 +44,7 @@ export const skills = [{
     {
       name: 'Markdown',
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg'
-    }
+    },
   ],
   'frameworks': [
     {
@@ -77,7 +82,11 @@ export const skills = [{
     {
       name: 'Material UI',
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg'
-    }
+    },
+    {
+      name: 'React Native',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+    }, 
   ],
   'tools': [
     {
@@ -113,6 +122,6 @@ export const skills = [{
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg'
     }
   ]
-}];
+};
 
 export default skills;

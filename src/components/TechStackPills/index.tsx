@@ -10,22 +10,23 @@ export const TechStackPills = () => {
     activePill.set(pill);
   };
 
+  const pills = ['Languages', 'Frameworks', 'Tools']
+
   return (
     <PillsContainer>
       {
-        $activePill === 'languages' 
-          ? (<ActivePill onClick={() => changeActivePill('languages')}>Languages</ActivePill>) 
-          : (<InactivePill onClick={() => changeActivePill('languages')}>Languages</InactivePill>)
-      }
-      {
-        $activePill === 'frameworks' 
-          ? (<ActivePill onClick={() => changeActivePill('frameworks')}>Frameworks</ActivePill>) 
-          : (<InactivePill onClick={() => changeActivePill('frameworks')}>Frameworks</InactivePill>)
-      }
-      {
-        $activePill === 'tools' 
-          ? (<ActivePill onClick={() => changeActivePill('tools')}>Tools</ActivePill>) 
-          : (<InactivePill onClick={() => changeActivePill('tools')}>Tools</InactivePill>)
+        pills.map((pill: string, index: number) => (
+          $activePill === pill.toLowerCase() 
+          ? (
+            <ActivePill key={index} onClick={() => changeActivePill(pill.toLowerCase())}>
+              {pill}
+            </ActivePill>
+          ) : (
+            <InactivePill key={index} onClick={() => changeActivePill(pill.toLowerCase())}>
+              {pill}
+            </InactivePill>
+          )
+        ))
       }
     </PillsContainer>
   );
