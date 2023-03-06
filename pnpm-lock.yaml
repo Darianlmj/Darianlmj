@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/react': 1.1.1
-  '@nanostores/react': 0.3.0
+  '@nanostores/react': 0.4.1
   '@stitches/react': 1.2.8
   '@types/react': 18.0.18
   '@typescript-eslint/eslint-plugin': 5.36.2
@@ -17,7 +17,7 @@ specifiers:
   vite: 3.2.4
 
 dependencies:
-  '@nanostores/react': 0.3.0_resngft2y545aodfc4fe35fzvu
+  '@nanostores/react': 0.4.1_opxalm4syp6fwwls4fxeknfrfm
   nanostores: 0.6.0
 
 devDependencies:
@@ -492,17 +492,15 @@ packages:
     resolution: {integrity: sha512-4/RWEeXDO6bocPONheFe6gX/oQdP/bEpv0oL4HqjPP5DCenBSt0mHgahppY49N0CpsaqffdwPq+TlX9CYOq2Dw==}
     dev: true
 
-  /@nanostores/react/0.3.0_resngft2y545aodfc4fe35fzvu:
-    resolution: {integrity: sha512-gf2vRS2kGxLzLAF20BlUeFxMtBVEHaErk2XQ1YYnTAPtuesBD2nB1ndAOOinL2mSS2zxyQ4jtW3uljvbsGNuIQ==}
+  /@nanostores/react/0.4.1_opxalm4syp6fwwls4fxeknfrfm:
+    resolution: {integrity: sha512-lsv0CYrMxczbXtoV/mxFVEoL/uVjEjseoP89srO/5yNAOkJka+dSFS7LYyWEbuvCPO7EgbtkvRpO5V+OztKQOw==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
-      nanostores: ^0.6.0
+      nanostores: ^0.7.0
       react: '>=18.0.0'
-      react-dom: '>=18.0.0'
     dependencies:
       nanostores: 0.6.0
       react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
@@ -3609,6 +3607,7 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: true
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -3855,6 +3854,7 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
+    dev: true
 
   /section-matter/1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
