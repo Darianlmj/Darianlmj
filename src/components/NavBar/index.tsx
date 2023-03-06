@@ -14,19 +14,13 @@ const NavBar = () => {
   return (
     <Nav>
       <NavItem>
-        <NavBarBrand 
-          src={image}
-          alt='Darianlmj'
-        />
+        <NavBarBrand src={image} alt='Darianlmj' />
       </NavItem>
       <NavItem>
         <NavWrapper>
           <NavList>
             <NavListItem>
-              <Link 
-                href='src/assets/Resume.pdf' 
-                download
-              >
+              <Link href='src/assets/Resume.pdf' target='_blank'>
                 Resume
               </Link>
             </NavListItem>

@@ -42,9 +42,13 @@ export const skills: Record<string, SkillItem[]> = {
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
     },
     {
-      name: 'Markdown',
-      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg'
-    },
+      name: 'Rust',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg'
+    }, 
+    {
+      name: 'PostgreSQL',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
+    }
   ],
   'frameworks': [
     {

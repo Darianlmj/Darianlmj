@@ -16,7 +16,7 @@ import { TechStackPills } from "@components/TechStackPills";
       <h2 class="introduction">a software engineer based in Sydney, Australia.</h2>
       <p class="introduction-description">I love experimenting and developing with exciting new frontend technologies.</p>
       <div class="buttonContainer">
-        <a href='src/assets/Resume.pdf' download>Resume</a>
+        <a href='src/assets/Resume.pdf' target="_blank">Resume</a>
         <button onclick="document.getElementById('get-in-touch').scrollIntoView({ behavior: 'smooth' })">Get In Touch</button>
       </div>
     </div>
@@ -41,16 +41,28 @@ import { TechStackPills } from "@components/TechStackPills";
 				  body="A web application where CSE students are able to find jobs."
         />
         <Card 
-          href="https://circles.csesoc.app/"
-				  title="Circles"
-          techStack={['Vue', 'NodeJS', 'Express', 'Swagger', 'Postgres', 'TailwindCSS']}
-				  body="A degree planner for UNSW students."
+          href="https://recallify.cse.lol/"
+          title="Recallify"
+          techStack={['React', 'TypeScript', 'Rust', 'Python', 'Stitches', 'Tailwind', 'twin.macros']}
+          body="A Progressive Web Application (PWA) which scans and processes grocery receipts. It alerts users if anything on it has been recalled. Made as part of the UniHack 2023 Hackathon."
         />
         <Card 
           href="https://darianlmj.dev/"
 				  title="Portfolio Website"
           techStack={['React', 'Typescript', 'Astro', 'Stitches']}
 				  body="The website you're currently on."
+        />
+        <Card 
+          href="https://calloc.app/"
+          title="Calloc"
+          techStack={['SolidJS', 'Rust', 'Stitches']}
+          body="An event management system for university societies made as a Progressive Web Application (PWA)."
+        />
+        <Card 
+          href="https://circles.csesoc.app/"
+				  title="Circles"
+          techStack={['Vue', 'NodeJS', 'Express', 'Swagger', 'Postgres', 'TailwindCSS']}
+				  body="A degree planner for UNSW students."
         />
         <Card 
           href="https://cookies-sh.web.app/"
