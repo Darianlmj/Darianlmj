@@ -1,10 +1,11 @@
 ### Hi there 👋
 
-#### I'm a 3rd Year Computer Science student at UNSW Sydney. In addition to that, I'm also a Casual Academic and the project lead for [CSESoc](https://csesoc.unsw.edu.au) where I am revamping the society's Jobs Board as well as a IT subcom member for UNSW ASEANSoc.
+#### I'm a 3rd Year Computer Science student at UNSW Sydney. In addition to that, I'm also a Casual Academic and the UI/UX director for [CSESoc](https://csesoc.unsw.edu.au) where I am helping to unify the design of the society's flagship projects.
 
 ### Projects that I've worked on
 
 - 💼 [Jobs Board](https://jobsboard.csesoc.unsw.edu.au/). A website where companies are able to advertise open positions to CSE students. Currently not open-sourced.
+- 🚨 [Recallify](https://recallify.cse.lol/). A progressive web application which scans and analyses grocery receipts. It informs the user of any recalls on the products they have purchased. Made as part of the UniHack 2023 hackathon.
 - 🇲🇾 ASEANSoc [website](https://www.unswaseansociety.com/).
 - 🌐 A personal [portfolio website](https://darianlmj.dev).
 - ☄️ A simplified version of the arcade game [Asteroids](https://github.com/Darianlmj/Asteroids).
