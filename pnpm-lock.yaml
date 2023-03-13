@@ -10,15 +10,15 @@ specifiers:
   astro: 1.6.10
   eslint: 8.28.0
   eslint-plugin-react: 7.31.7
-  nanostores: 0.6.0
+  nanostores: 0.7.4
   react: 18.2.0
   react-dom: 18.2.0
   typescript: 4.9.5
   vite: 3.2.5
 
 dependencies:
-  '@nanostores/react': 0.4.1_opxalm4syp6fwwls4fxeknfrfm
-  nanostores: 0.6.0
+  '@nanostores/react': 0.4.1_nkfnbc2tpc77iht7asm3uqwau4
+  nanostores: 0.7.4
 
 devDependencies:
   '@astrojs/react': 1.1.1_biqbaboplfbrettd7655fr4n2y
@@ -523,14 +523,14 @@ packages:
     resolution: {integrity: sha512-4/RWEeXDO6bocPONheFe6gX/oQdP/bEpv0oL4HqjPP5DCenBSt0mHgahppY49N0CpsaqffdwPq+TlX9CYOq2Dw==}
     dev: true
 
-  /@nanostores/react/0.4.1_opxalm4syp6fwwls4fxeknfrfm:
+  /@nanostores/react/0.4.1_nkfnbc2tpc77iht7asm3uqwau4:
     resolution: {integrity: sha512-lsv0CYrMxczbXtoV/mxFVEoL/uVjEjseoP89srO/5yNAOkJka+dSFS7LYyWEbuvCPO7EgbtkvRpO5V+OztKQOw==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
       nanostores: ^0.7.0
       react: '>=18.0.0'
     dependencies:
-      nanostores: 0.6.0
+      nanostores: 0.7.4
       react: 18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
@@ -3370,8 +3370,8 @@ packages:
     hasBin: true
     dev: true
 
-  /nanostores/0.6.0:
-    resolution: {integrity: sha512-CQpKE8wtaJAr66hbg32t0MOAeybzLywU6UsLAX18kyQL/bME+xwhjWpmrvJRBp5kueFy6hs2oHlt3HFpNP+JaA==}
+  /nanostores/0.7.4:
+    resolution: {integrity: sha512-MBeUVt7NBcXqh7AGT+KSr3O0X/995CZsvcP2QEMP+PXFwb07qv3Vjyq+EX0yS8f12Vv3Tn2g/BvK/OZoMhJlOQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     dev: false
 
