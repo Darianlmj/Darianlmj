@@ -20,7 +20,7 @@ const NavBar = () => {
         <NavWrapper>
           <NavList>
             <NavListItem>
-              <Link href='src/assets/Resume.pdf' target='_blank'>
+              <Link href='/resume.pdf' target='_blank'>
                 Resume
               </Link>
             </NavListItem>
