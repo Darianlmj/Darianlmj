@@ -1,12 +1,16 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@nanostores/react':
     specifier: 0.4.1
-    version: 0.4.1(nanostores@0.7.4)(react@18.2.0)
+    version: 0.4.1(nanostores@0.9.4)(react@18.2.0)
   nanostores:
-    specifier: 0.7.4
-    version: 0.7.4
+    specifier: 0.9.4
+    version: 0.9.4
 
 devDependencies:
   '@astrojs/react':
@@ -535,14 +539,14 @@ packages:
     resolution: {integrity: sha512-4/RWEeXDO6bocPONheFe6gX/oQdP/bEpv0oL4HqjPP5DCenBSt0mHgahppY49N0CpsaqffdwPq+TlX9CYOq2Dw==}
     dev: true
 
-  /@nanostores/react@0.4.1(nanostores@0.7.4)(react@18.2.0):
+  /@nanostores/react@0.4.1(nanostores@0.9.4)(react@18.2.0):
     resolution: {integrity: sha512-lsv0CYrMxczbXtoV/mxFVEoL/uVjEjseoP89srO/5yNAOkJka+dSFS7LYyWEbuvCPO7EgbtkvRpO5V+OztKQOw==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
       nanostores: ^0.7.0
       react: '>=18.0.0'
     dependencies:
-      nanostores: 0.7.4
+      nanostores: 0.9.4
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
@@ -3382,9 +3386,9 @@ packages:
     hasBin: true
     dev: true
 
-  /nanostores@0.7.4:
-    resolution: {integrity: sha512-MBeUVt7NBcXqh7AGT+KSr3O0X/995CZsvcP2QEMP+PXFwb07qv3Vjyq+EX0yS8f12Vv3Tn2g/BvK/OZoMhJlOQ==}
-    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
+  /nanostores@0.9.4:
+    resolution: {integrity: sha512-BVFzKt6K5P8tYQLL7MItqcev7jpspA5pIjv+Ck3k6wBnUlwCJcpkGTIinj4APvx8SvdP9fXDGoMRCTY6DO/9QA==}
+    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     dev: false
 
   /natural-compare-lite@1.4.0:
