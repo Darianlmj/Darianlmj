@@ -5,27 +5,29 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && tsc --noEmit && astro build",
+    "build": "astro check && tsc --noEmit && astro build --experimental",
     "preview": "astro preview",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src"
   },
   "devDependencies": {
-    "@astrojs/react": "1.2.2",
+    "@astrojs/react": "3.0.3",
     "@stitches/react": "1.2.8",
+    "@types/node": "^20.8.7",
     "@types/react": "18.2.20",
-    "astro": "1.9.2",
     "@typescript-eslint/eslint-plugin": "6.8.0",
     "@typescript-eslint/parser": "6.8.0",
+    "astro": "3.3.2",
     "eslint": "8.52.0",
     "eslint-plugin-react": "7.33.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6",
-    "vite": "3.2.7"
+    "vite": "4.5.0"
   },
   "dependencies": {
-    "@nanostores/react": "0.4.1",
-    "nanostores": "0.7.4"
+    "@astrojs/check": "^0.2.1",
+    "@nanostores/react": "0.7.1",
+    "nanostores": "0.9.4"
   }
 }
