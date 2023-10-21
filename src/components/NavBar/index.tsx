@@ -14,7 +14,7 @@ const NavBar = () => {
   return (
     <Nav>
       <NavItem>
-        <NavBarBrand src={Profile.src} alt='Darianlmj' />
+        <NavBarBrand src={Profile.src} alt='Darianlmj' width='2rem' height='2rem'/>
       </NavItem>
       <NavItem>
         <NavWrapper>
