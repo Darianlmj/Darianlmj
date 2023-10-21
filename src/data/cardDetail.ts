@@ -1,4 +1,9 @@
-import { Props } from '@components/Card/Card.astro';
+export interface Props {
+	title: string;
+  techStack: string[];
+	body: string;
+	href: string;
+}
 
 export const cardList: Props[] = [
   {

@@ -11,7 +11,7 @@ export const TechStackDisplay = (): JSX.Element => {
       {
         skills[$activePill].map((item: SkillItem, index: number) => (
           <Pill key={index}>
-            <Image src={item.link} alt={item.name} />
+            <Image src={item.link} alt={item.name} width='1rem' height='1rem' />
             {item.name}
           </Pill>
         ))
