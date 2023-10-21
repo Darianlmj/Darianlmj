@@ -14,6 +14,10 @@ export const skills: Record<string, SkillItem[]> = {
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
     }, 
     {
+      name: 'PHP',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
+    },
+    {
       name: 'LaTeX',
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg'
     },
@@ -91,6 +95,10 @@ export const skills: Record<string, SkillItem[]> = {
       name: 'React Native',
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
     }, 
+    {
+      name: 'Laravel',
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg' 
+    }
   ],
   'tools': [
     {

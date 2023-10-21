@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-#### I'm a 3rd Year Computer Science student at UNSW Sydney. In addition to that, I'm also a Casual Academic and the UI/UX director for [CSESoc](https://csesoc.unsw.edu.au) where I am helping to unify the design of the society's flagship projects.
+#### I'm a Graduate Computer Science student at UNSW Sydney. In addition to that, I'm also a Casual Academic and the UI/UX director for [CSESoc](https://csesoc.unsw.edu.au) where I am helping to unify the design of the society's flagship projects.
 
 ### Projects that I've worked on
 
@@ -33,3 +33,5 @@
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Rust](https://img.shields.io/badge/Rust-000?style=for-the-badge&logo=rust&logoColor=fff)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
