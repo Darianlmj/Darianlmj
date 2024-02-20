@@ -10,10 +10,10 @@ dependencies:
     version: 0.3.0(typescript@5.2.2)
   '@nanostores/react':
     specifier: 0.7.1
-    version: 0.7.1(nanostores@0.9.4)(react@18.2.0)
+    version: 0.7.1(nanostores@0.10.0)(react@18.2.0)
   nanostores:
-    specifier: 0.9.4
-    version: 0.9.4
+    specifier: 0.10.0
+    version: 0.10.0
 
 devDependencies:
   '@astrojs/react':
@@ -948,14 +948,14 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@nanostores/react@0.7.1(nanostores@0.9.4)(react@18.2.0):
+  /@nanostores/react@0.7.1(nanostores@0.10.0)(react@18.2.0):
     resolution: {integrity: sha512-EXQg9N4MdI4eJQz/AZLIx3hxQ6BuBmV4Q55bCd5YCSgEOAW7tGTsIZxpRXxvxLXzflNvHTBvfrDNY38TlSVBkQ==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     peerDependencies:
       nanostores: ^0.9.0
       react: '>=18.0.0'
     dependencies:
-      nanostores: 0.9.4
+      nanostores: 0.10.0
       react: 18.2.0
     dev: false
 
@@ -3771,9 +3771,9 @@ packages:
     hasBin: true
     dev: true
 
-  /nanostores@0.9.4:
-    resolution: {integrity: sha512-BVFzKt6K5P8tYQLL7MItqcev7jpspA5pIjv+Ck3k6wBnUlwCJcpkGTIinj4APvx8SvdP9fXDGoMRCTY6DO/9QA==}
-    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+  /nanostores@0.10.0:
+    resolution: {integrity: sha512-Poy5+9wFXOD0jAstn4kv9n686U2BFw48z/W8lms8cS8lcbRz7BU20JxZ3e/kkKQVfRrkm4yLWCUA6GQINdvJCQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
     dev: false
 
   /napi-build-utils@1.0.2:
