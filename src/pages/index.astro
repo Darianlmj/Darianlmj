@@ -165,7 +165,7 @@ import { cardList } from "../data/cardDetail";
 
   .interactive-bar {
     font-family: Open Sans,Helvetica,Arial,sans-serif;
-    margin: 4rem 0 0 0;
+    margin: 2rem 0 0 0;
   }
 
   .introduction {
@@ -174,13 +174,13 @@ import { cardList } from "../data/cardDetail";
 
   .buttonContainer {
     display: flex;
-    width: 35%;
-    justify-content: space-between;
+    gap: 1rem;
     align-items: center;
     flex: 1;
     flex-wrap: wrap;
     padding: 0 0 1rem 0;
     margin-top: 1.5rem;
+
   }
 
   a {
@@ -198,6 +198,9 @@ import { cardList } from "../data/cardDetail";
     font-size: var(--font-size-small);
     font-weight: bold;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @media screen and (max-width: 850px) {
@@ -218,6 +221,7 @@ import { cardList } from "../data/cardDetail";
 
     .buttonContainer {
       align-items: center;
+      gap: 0.5rem;
     }
     
     p {
