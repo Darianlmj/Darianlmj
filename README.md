@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-#### I'm a Graduate Computer Science student at UNSW Sydney. In addition to that, I'm also a Casual Academic and the UI/UX director for [CSESoc](https://csesoc.unsw.edu.au) where I am helping to unify the design of the society's flagship projects.
+#### I'm Darian, a fullstack software engineer based in Sydney. In addition to that, I'm also a Graduate student and a Casual Academic at the University of New South Wales as well as the previous UI/UX director for [CSESoc](https://csesoc.unsw.edu.au) where I helped to unify the design of the society's flagship projects.
 
 ### Projects that I've worked on
 
@@ -13,12 +13,13 @@
 
 <a href="https://github.com/jstrieb/github-stats">
 
-  ![](https://raw.githubusercontent.com/Darianlmj/github-stats/master/generated/overview.svg)
-  ![](https://raw.githubusercontent.com/Darianlmj/github-stats/master/generated/languages.svg)
+![](https://raw.githubusercontent.com/Darianlmj/github-stats/master/generated/overview.svg)
+![](https://raw.githubusercontent.com/Darianlmj/github-stats/master/generated/languages.svg)
 
 </a>
 
 ### Languages and Frameworks
+
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=C%2B%2B&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
