@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.9.0
     version: 0.9.4(typescript@5.2.2)
   '@nanostores/react':
-    specifier: 0.7.1
-    version: 0.7.1(nanostores@0.9.4)(react@18.2.0)
+    specifier: 0.8.0
+    version: 0.8.0(nanostores@0.9.4)(react@18.2.0)
   nanostores:
     specifier: 0.9.4
     version: 0.9.4
@@ -1352,11 +1352,11 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@nanostores/react@0.7.1(nanostores@0.9.4)(react@18.2.0):
-    resolution: {integrity: sha512-EXQg9N4MdI4eJQz/AZLIx3hxQ6BuBmV4Q55bCd5YCSgEOAW7tGTsIZxpRXxvxLXzflNvHTBvfrDNY38TlSVBkQ==}
-    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+  /@nanostores/react@0.8.0(nanostores@0.9.4)(react@18.2.0):
+    resolution: {integrity: sha512-MhbVB7NQLboq/Z9fRTDen9zib/YCffe6mn+3Xg5MOYByMX5Xx98SOZjk/Nd3yvOd/g7GjlQqwXj0KF2lPb6CEQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      nanostores: ^0.9.0
+      nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0
       react: '>=18.0.0'
     dependencies:
       nanostores: 0.9.4
