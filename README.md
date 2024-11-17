@@ -1,6 +1,6 @@
-### Hi there 👋
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrainsMono&duration=2000&pause=1000&color=0470B5&width=435&lines=Hi%2C+I'm+Darian!+%F0%9F%91%8B;Software+Engineer;Product+Designer)](https://git.io/typing-svg)
 
-#### I'm Darian, a fullstack software engineer based in Sydney. In addition to that, I'm also a Graduate student and a Casual Academic at the University of New South Wales as well as the previous UI/UX director for [CSESoc](https://csesoc.unsw.edu.au) where I helped to unify the design of the society's flagship projects.
+#### I'm Darian, a fullstack software engineer based in Sydney. In addition, I'm also a Graduate student and a Casual Academic at the University of New South Wales as well as the previous UI/UX director for [CSESoc](https://csesoc.unsw.edu.au) where I helped to unify the design of the society's flagship projects.
 
 ### Projects that I've worked on
 
