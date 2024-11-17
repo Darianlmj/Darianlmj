@@ -1,0 +1,93 @@
+---
+import Email from 'src/assets/Email.svg';
+import Github from 'src/assets/Github.svg';
+import LinkedIn from 'src/assets/LinkedIn.svg';
+---
+
+<footer>
+  <div class="container">
+    <div class="col item social">
+      <h3 id="get-in-touch">Get In Touch</h3>
+      <div class="links">
+        <a href="mailto: darianlmj@gmail.com" target="_blank">
+          <img src={Email.src} width="28px" height="28px" alt="Email" />
+        </a>
+        <a href="https://github.com/Darianlmj/" target="_blank">
+          <img src={Github.src} alt="Github" width="30px" height="30px" />
+        </a>
+        <a href="https://www.linkedin.com/in/darianlmj/" target="_blank">
+          <img src={LinkedIn.src} alt="LinkedIn" width="30px" height="30px" />
+        </a>
+      </div>
+    </div>
+    <p class="statement">Made with ❤ in 2022</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto 0 auto;
+    padding: 2rem 0;
+    color: #000000;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgb(50 50 93 / 10%);
+  }
+
+  footer h3 {
+    margin-top: 0px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  .container {
+    max-width: 80ch;
+  }
+
+  footer .item.text {
+    margin-bottom: 36px;
+  }
+
+  footer .item.text p {
+    opacity: 0.6;
+    margin-bottom: 0;
+  }
+
+  footer .item.social {
+    text-align: center;
+  }
+
+  footer .links > a {
+    font-size: var(--font-size-md);
+    width: 3rem;
+    height: 3rem;
+    line-height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+    margin: 0 8px;
+    color: var(--color-text);
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer .item.social > a:hover {
+    opacity: 0.9;
+  }
+
+  footer .statement {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin: 2rem 0 0.5rem 0;
+  }
+</style>

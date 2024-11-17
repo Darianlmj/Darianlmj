@@ -1,0 +1,104 @@
+---
+export interface Props {
+	title: string;
+  techStack: String[];
+	body: string;
+	href: string;
+}
+const { href, title, techStack, body } = Astro.props;
+---
+
+<div class="link-card">
+	<a href={href} target="_blank">
+		<h2>
+			{title}
+			<span class="arrow">&rarr;</span>
+		</h2>
+    <div>
+      {
+        techStack.map((tech: String) => (
+          <span class="tech-stack">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
+		<p>
+			{body}
+		</p>
+	</a>
+</div>
+<style>
+	.link-card {
+		list-style: none;
+		display: flex;
+		padding: 0.15rem;
+    margin: 1rem 0;
+    border-left: 0.4rem solid var(--blue-10);
+		background-size: 400%;
+		border-radius: 0.5rem;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: -0.2rem 0.3rem 0.5rem -0.1rem rgba(0,0,0,0.1);
+	}
+
+	.link-card > a {
+		width: 100%;
+		text-decoration: none;
+		line-height: 1.4;
+		padding: 1em 1.3em;
+		border-radius: 0.35rem;
+		color: var(--text-color);
+		background-color: white;
+		opacity: 0.8;
+	}
+
+  .tech-stack {
+    display: inline-block;
+    margin: 0.5rem 0.2rem 0 0.2rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem;
+    background-color: var(--blue-4);
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+	h2 {
+		margin: 0;
+		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	p {
+		margin-top: 0.75rem;
+		margin-bottom: 0;
+	}
+
+	h2 span {
+		display: inline-block;
+		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.link-card:is(:hover, :focus-within) {
+		background-position: 0;
+    transition-duration: 500ms;
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transform: translateY(-0.2rem);
+    box-shadow: 0.2rem 0.3rem 0.5rem -0.1rem rgba(0,0,0,0.1);
+	}
+
+	.link-card:is(:hover, :focus-within) h2 {
+		color: hsl(216, 100%, 50%);
+	}
+
+	.link-card:is(:hover, :focus-within) h2 span {
+		transform: translateX(2px);
+	}
+
+  @media screen and (max-width: 380px) {
+    .arrow {
+      display: none;
+    }
+  }
+</style>
