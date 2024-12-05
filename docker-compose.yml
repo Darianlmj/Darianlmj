@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  node:
+    image: node:20.12.2
+    container_name: portfolio_v3
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      NODE_ENV: preview
+      CI: true
+    command: >
+      sh -c "
+      npm install -g pnpm &&
+      pnpm install &&
+      pnpm build
+      "

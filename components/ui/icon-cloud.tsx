@@ -81,7 +81,7 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
   }, [data, theme]);
 
   return (
-    // @ts-expect-error - `children` is required
+    // @ts-expect-error: cloudProps may only have one child
     <Cloud {...cloudProps}>
       <>{renderedIcons}</>
     </Cloud>
