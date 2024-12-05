@@ -28,7 +28,7 @@ const NavBar = () => {
               <Button
                 onClick={() =>
                   document
-                    .getElementById('projects')
+                    .getElementById('projects')!
                     .scrollIntoView({ behavior: 'smooth' })
                 }
               >
