@@ -1,0 +1,61 @@
+---
+export interface Props {
+  content: String
+}
+
+const { content } = Astro.props;
+---
+<div class="container">
+  <h1 class="description large-screen">{content}&nbsp;</h1>
+  <h1 class="description small-screen">{content}</h1>
+</div>
+  
+<style>
+  h1 {
+		margin: 0;
+    font-weight: 700;
+    font-size: var(--font-size-xxl);
+    opacity: 0.9;
+	}
+
+  .container {
+    display: inline-block;
+  }
+  
+  .description {
+    width: fit-content;
+  }
+
+  .large-screen {
+    overflow: hidden;
+    border-right: 0.4rem solid var(--blue-12);
+    white-space: nowrap;
+    animation: typing 1.5s forwards; 
+    animation-iteration-count: 1;
+    width: 0;
+  }
+
+  .small-screen {
+    display: none;
+  }
+
+  @keyframes typing {
+    from { 
+      width: 0 
+    }
+    to { 
+      width: 100% 
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .description {
+      display: none;
+    }
+
+    .small-screen {
+      display: inline-block;
+      text-align: center;
+    }
+  }
+</style>
