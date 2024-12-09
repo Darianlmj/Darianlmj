@@ -26,6 +26,8 @@ const EducationList = () => {
               src={education.logo}
               alt={education.school}
               className='rounded-full'
+              placeholder='blur'
+              blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=='
               width={30}
               height={30}
             />

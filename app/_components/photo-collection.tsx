@@ -30,7 +30,12 @@ export const PhotoCollectionCard = ({
     >
       <div className="relative">
         <div className="bg-slate-900 block size-full">
-          <Image src={photo.image} alt={photo.alt} />
+          <Image
+            src={photo.image}
+            alt={photo.alt}
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=="
+          />
         </div>
         <div className="absolute inset-0 bg-slate-900 opacity-20"></div>
         <div className="flex flex-col gap-2 absolute bottom-4 left-4">

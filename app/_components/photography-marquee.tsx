@@ -50,6 +50,8 @@ export function PhotographyMarquee() {
             key={i}
             src={image}
             alt={`image-${i}`}
+            placeholder='blur'
+            blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=='
             className='h-[75%] w-[75%] md:h-full md:w-full object-cover'
           />
         ))}
@@ -60,6 +62,8 @@ export function PhotographyMarquee() {
             key={i}
             src={image}
             alt={`image-${i}`}
+            placeholder='blur'
+            blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=='
             className='h-[75%] w-[75%] md:h-full md:w-full object-cover'
           />
         ))}

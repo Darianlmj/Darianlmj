@@ -42,7 +42,7 @@ export default function Page() {
                     src={photo.image}
                     alt={photo.alt}
                     placeholder='blur'
-                    blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkkI+vBwABpAD/ohZTjgAAAABJRU5ErkJggg=='
+                    blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=='
                     className='object-cover w-full h-auto block'
                   />
                   <p className='text-sm text-slate-500'>{photo.location}</p>
@@ -66,6 +66,8 @@ export default function Page() {
               <Image
                 src={darianPhotography}
                 alt='Darian Lee'
+                placeholder='blur'
+                blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=='
                 className='w-[18rem] rounded-md'
               />
               <div className='flex flex-col sm:flex-row gap-8 justify-center px-4 lg:px-20'>

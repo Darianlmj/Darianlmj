@@ -77,6 +77,8 @@ export default function Home() {
               <Image
                 src={darian}
                 alt='Darian Lee'
+                placeholder='blur'
+                blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=='
                 className='w-[18rem] rounded-md'
               />
               <div className='flex flex-col sm:flex-row gap-8 justify-center px-4 lg:px-20'>
