@@ -116,7 +116,9 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <PhotographyMarquee />
+            <div className='hidden sm:block'>
+              <PhotographyMarquee />
+            </div>
           </section>
           <section id='contact' className='container mx-auto my-20'>
             <h2 className='scroll-m-20 text-center pb-2 text-3xl font-semibold tracking-tight first:mt-0'>

@@ -122,7 +122,7 @@ export default function NavBar() {
                 <span>Projects</span>
               </Link>
               <DropdownMenuSeparator />
-              <Link href='/'>
+              <Link href='/photography'>
                 <p className='text-sm font-bold py-2'>Photography</p>
               </Link>
               <Link
