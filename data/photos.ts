@@ -17,6 +17,9 @@ import image16 from '@/public/assets/photography/japan/image16.jpg'
 import image17 from '@/public/assets/photography/japan/image17.jpg'
 import image18 from '@/public/assets/photography/japan/image18.jpg'
 import image19 from '@/public/assets/photography/australia/image19.jpg'
+import image20 from '@/public/assets/photography/japan/image20.jpg'
+import image21 from '@/public/assets/photography/south-east-asia/image21.jpg'
+import image22 from '@/public/assets/photography/south-east-asia/image22.jpg'
 import { StaticImageData } from 'next/image'
 
 export interface Photo {
@@ -77,6 +80,19 @@ export const photoCollections = [
       }
     },
     photos: [image3, image4, image5, image6, image7]
+  },
+  {
+    location: 'South East Asia',
+    thumbnail: {
+      image: image21,
+      alt: 'Jewel Changi Airport',
+      location: 'Singapore',
+      tags: {
+        location: ['Singapore'],
+        country: 'South East Asia'
+      }
+    },
+    photos: [image21, image22]
   }
 ]
 
@@ -91,35 +107,8 @@ const photos: Photo[] = [
     }
   },
   {
-    image: image2,
-    alt: 'Sydney CBD',
-    location: 'Sydney, Australia',
-    tags: {
-      location: ['Sydney', 'Australia'],
-      country: 'Australia'
-    }
-  },
-  {
     image: image3,
     alt: 'Outside Gyeongbokgung Palace, Seoul',
-    location: 'Seoul, South Korea',
-    tags: {
-      location: ['Seoul', 'South Korea'],
-      country: 'South Korea'
-    }
-  },
-  {
-    image: image4,
-    alt: 'Gyeongbokgung Palace, Seoul',
-    location: 'Seoul, South Korea',
-    tags: {
-      location: ['Seoul', 'South Korea'],
-      country: 'South Korea'
-    }
-  },
-  {
-    image: image5,
-    alt: 'Gyeongbokgung Palace, Seoul',
     location: 'Seoul, South Korea',
     tags: {
       location: ['Seoul', 'South Korea'],
@@ -145,24 +134,6 @@ const photos: Photo[] = [
     }
   },
   {
-    image: image8,
-    alt: 'Sydney Opera House',
-    location: 'Sydney, Australia',
-    tags: {
-      location: ['Sydney', 'Australia'],
-      country: 'Australia'
-    }
-  },
-  {
-    image: image9,
-    alt: 'Old man painting',
-    location: 'Kiyomizu-dera, Kyoto',
-    tags: {
-      location: ['Kyoto', 'Japan'],
-      country: 'Japan'
-    }
-  },
-  {
     image: image10,
     alt: 'Namba Yasaka Shrine',
     location: 'Osaka, Japan',
@@ -172,12 +143,12 @@ const photos: Photo[] = [
     }
   },
   {
-    image: image11,
-    alt: 'Temple in Nara',
-    location: 'Nara, Japan',
+    image: image8,
+    alt: 'Sydney Opera House',
+    location: 'Sydney, Australia',
     tags: {
-      location: ['Nara', 'Japan'],
-      country: 'Japan'
+      location: ['Sydney', 'Australia'],
+      country: 'Australia'
     }
   },
   {
@@ -190,17 +161,8 @@ const photos: Photo[] = [
     }
   },
   {
-    image: image13,
-    alt: 'Town hall, Sydney',
-    location: 'Sydney, Australia',
-    tags: {
-      location: ['Sydney', 'Australia'],
-      country: 'Australia'
-    }
-  },
-  {
-    image: image14,
-    alt: 'Couple hugging',
+    image: image2,
+    alt: 'Sydney CBD',
     location: 'Sydney, Australia',
     tags: {
       location: ['Sydney', 'Australia'],
@@ -217,12 +179,69 @@ const photos: Photo[] = [
     }
   },
   {
+    image: image9,
+    alt: 'Old man painting',
+    location: 'Kiyomizu-dera, Kyoto',
+    tags: {
+      location: ['Kyoto', 'Japan'],
+      country: 'Japan'
+    }
+  },
+  {
+    image: image4,
+    alt: 'Gyeongbokgung Palace, Seoul',
+    location: 'Seoul, South Korea',
+    tags: {
+      location: ['Seoul', 'South Korea'],
+      country: 'South Korea'
+    }
+  },
+  {
+    image: image20,
+    alt: 'Ninenzaka, Kyoto',
+    location: 'Kyoto, Japan',
+    tags: {
+      location: ['Kyoto', 'Japan'],
+      country: 'Japan'
+    }
+  },
+  
+  
+  {
+    image: image11,
+    alt: 'Temple in Nara',
+    location: 'Nara, Japan',
+    tags: {
+      location: ['Nara', 'Japan'],
+      country: 'Japan'
+    }
+  },
+  
+  {
+    image: image14,
+    alt: 'Couple hugging',
+    location: 'Sydney, Australia',
+    tags: {
+      location: ['Sydney', 'Australia'],
+      country: 'Australia'
+    }
+  },
+  {
     image: image16,
     alt: 'Arashiyama Monkey Park',
     location: 'Kyoto, Japan',
     tags: {
       location: ['Kyoto', 'Japan'],
       country: 'Japan'
+    }
+  },
+  {
+    image: image13,
+    alt: 'Town hall, Sydney',
+    location: 'Sydney, Australia',
+    tags: {
+      location: ['Sydney', 'Australia'],
+      country: 'Australia'
     }
   },
   {
@@ -234,6 +253,16 @@ const photos: Photo[] = [
       country: 'Japan'
     }
   },
+  {
+    image: image21,
+    alt: 'Jewel Changi Airport',
+    location: 'Singapore',
+    tags: {
+      location: ['Singapore'],
+      country: 'South East Asia'
+    }
+  },
+  
   {
     image: image18,
     alt: 'Sanenzaka, Kyoto',
@@ -251,7 +280,26 @@ const photos: Photo[] = [
       location: ['Sydney', 'Australia'],
       country: 'Australia'
     }
-  }
+  },
+  {
+    image: image5,
+    alt: 'Gyeongbokgung Palace, Seoul',
+    location: 'Seoul, South Korea',
+    tags: {
+      location: ['Seoul', 'South Korea'],
+      country: 'South Korea'
+    }
+  },
+  
+  {
+    image: image22,
+    alt: 'Street vendor',
+    location: 'Kuala Lumpur, Malaysia',
+    tags: {
+      location: ['Kuala Lumpur', 'Malaysia'],
+      country: 'South East Asia'
+    }
+  },
 ]
 
 export default photos
