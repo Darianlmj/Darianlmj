@@ -7,10 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "pages:build": "pnpx @cloudflare/next-on-pages",
-    "preview": "pnpm run pages:build && wrangler pages dev",
-    "deploy": "pnpm run pages:build && wrangler pages deploy"
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
@@ -32,11 +29,9 @@
     "react-dom": "18",
     "react-icon-cloud": "^4.1.4",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7",
-    "wrangler": "^3.93.0"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
