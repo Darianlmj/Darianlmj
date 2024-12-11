@@ -1,3 +1,5 @@
+'use client'
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import darian from '@/public/assets/darian.jpeg';
 import EducationList from './_components/education-list';
@@ -11,7 +13,19 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { CameraIcon } from 'lucide-react';
 
+const isSafariBrowser = () => {
+  const ua = navigator.userAgent.toLowerCase();
+  return (
+    ua.includes('safari') && !ua.includes('chrome') && !ua.includes('android')
+  );
+};
 export default function Home() {
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    setIsSafari(isSafariBrowser());
+  }, []);
+
   return (
     <div className='items-center min-h-screen p-8 sm:px-32 sm:py-20 font-[family-name:var(--font-inter)]'>
       <main className='flex flex-col row-start-2 items-center sm:items-start'>
@@ -116,7 +130,7 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <div className='hidden sm:block'>
+            <div className={isSafari ? 'hidden' : ''}>
               <PhotographyMarquee />
             </div>
           </section>
