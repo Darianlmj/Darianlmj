@@ -18,7 +18,7 @@ dependencies:
 devDependencies:
   '@astrojs/react':
     specifier: 3.6.2
-    version: 3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1)(react@18.3.1)(vite@5.4.11)
+    version: 3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1)(react@18.3.1)(vite@5.4.12)
   '@stitches/react':
     specifier: 1.2.8
     version: 1.2.8(react@18.3.1)
@@ -53,8 +53,8 @@ devDependencies:
     specifier: 5.6.3
     version: 5.6.3
   vite:
-    specifier: 5.4.11
-    version: 5.4.11(@types/node@22.9.0)
+    specifier: 5.4.12
+    version: 5.4.12(@types/node@22.9.0)
 
 packages:
 
@@ -160,7 +160,7 @@ packages:
       prismjs: 1.29.0
     dev: true
 
-  /@astrojs/react@3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1)(react@18.3.1)(vite@5.4.11):
+  /@astrojs/react@3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1)(react@18.3.1)(vite@5.4.12):
     resolution: {integrity: sha512-fK29lYI7zK/KG4ZBy956x4dmauZcZ18osFkuyGa8r3gmmCQa2NZ9XNu9WaVYEUm0j89f4Gii4tbxLoyM8nk2MA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
@@ -171,7 +171,7 @@ packages:
     dependencies:
       '@types/react': 18.3.12
       '@types/react-dom': 18.3.1
-      '@vitejs/plugin-react': 4.3.3(vite@5.4.11)
+      '@vitejs/plugin-react': 4.3.3(vite@5.4.12)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       ultrahtml: 1.5.3
@@ -1410,7 +1410,7 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vitejs/plugin-react@4.3.3(vite@5.4.11):
+  /@vitejs/plugin-react@4.3.3(vite@5.4.12):
     resolution: {integrity: sha512-NooDe9GpHGqNns1i8XDERg0Vsg5SSYRhRxxyTGogUdkdNt47jal+fbuYi+Yfq6pzRCKXyoPcWisfxE6RIM3GKA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -1421,7 +1421,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.0)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.11(@types/node@22.9.0)
+      vite: 5.4.12(@types/node@22.9.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1721,8 +1721,8 @@ packages:
       tsconfck: 3.1.4(typescript@5.6.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 5.4.11(@types/node@22.9.0)
-      vitefu: 1.0.3(vite@5.4.11)
+      vite: 5.4.12(@types/node@22.9.0)
+      vitefu: 1.0.3(vite@5.4.12)
       which-pm: 3.0.0
       xxhash-wasm: 1.0.2
       yargs-parser: 21.1.1
@@ -5207,8 +5207,8 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
-  /vite@5.4.11(@types/node@22.9.0):
-    resolution: {integrity: sha512-c7jFQRklXua0mTzneGW9QVyxFjUgwcihC4bXEtujIo2ouWCe1Ajt/amn2PCxYnhYfd5k09JX3SB7OYWFKYqj8Q==}
+  /vite@5.4.12(@types/node@22.9.0):
+    resolution: {integrity: sha512-KwUaKB27TvWwDJr1GjjWthLMATbGEbeWYZIbGZ5qFIsgPP3vWzLu4cVooqhm5/Z2SPDUMjyPVjTztm5tYKwQxA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -5246,7 +5246,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitefu@1.0.3(vite@5.4.11):
+  /vitefu@1.0.3(vite@5.4.12):
     resolution: {integrity: sha512-iKKfOMBHob2WxEJbqbJjHAkmYgvFDPhuqrO82om83S8RLk+17FtyMBfcyeH8GqD0ihShtkMW/zzJgiA51hCNCQ==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0-beta.0
@@ -5254,7 +5254,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.4.11(@types/node@22.9.0)
+      vite: 5.4.12(@types/node@22.9.0)
     dev: true
 
   /volar-service-css@0.0.62(@volar/language-service@2.4.10):
