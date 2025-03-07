@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:ci": "playwright test"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
@@ -32,6 +35,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
