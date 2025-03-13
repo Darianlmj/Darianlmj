@@ -16,7 +16,7 @@ const workExperience = [
     date: 'September 2022 - Present'
   },
   {
-    company: 'Cover Genius',
+    company: 'The University of New South Wales',
     logo: unsw,
     role: 'Academic Tutor for COMP3511 - Human Computer Interaction',
     date: 'April - August 2023'
