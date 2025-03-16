@@ -17,7 +17,7 @@ const HeroBanner = ({
   const location = usePathname();
 
   return (
-    <section>
+    <section id='hero-banner'>
       <div className='container mx-auto'>
         <div className='grid grid-cols-1 xl:grid-cols-2 gap-4'>
           <div className='flex flex-col justify-center'>
@@ -47,7 +47,7 @@ const HeroBanner = ({
           >
             <Button variant={'secondary'}>Check out my work</Button>
           </Link>
-          <Link href='#contact'>
+          <Link href='/#contact'>
             <Button variant={'ghost'}>Connect with me</Button>
           </Link>
         </div>

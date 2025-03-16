@@ -31,7 +31,7 @@ export default function Home() {
       <main className='flex flex-col row-start-2 items-center sm:items-start'>
         <HeroBanner
           title={['Fullstack', 'based in Sydney, Australia']}
-          description='I love experimenting and developing with exciting new technologies. I also dabble in  product design, illustration and photography.'
+          description='I love experimenting and developing with exciting new technologies. I also dabble in product design, illustration and photography.'
           focusWord='Software Engineer'
         />
         <div className='w-full pt-20 sm:px-10 lg:px-30 xl:px-60'>
