@@ -18,7 +18,8 @@ import {
   SparklesIcon,
   FolderClosedIcon,
   CameraIcon,
-  ImagesIcon
+  ImagesIcon,
+  ArchiveIcon
 } from 'lucide-react';
 import { ThemeToggle } from './theme-toggle';
 
@@ -44,6 +45,12 @@ const HighlightsMenu = () => (
           <DropdownMenuItem>
             <FolderClosedIcon />
             <span>Projects</span>
+          </DropdownMenuItem>
+        </Link>
+        <Link href='/#blog'>
+          <DropdownMenuItem>
+            <ArchiveIcon />
+            <span>Blog Archive</span>
           </DropdownMenuItem>
         </Link>
       </DropdownMenuGroup>
@@ -120,6 +127,14 @@ export default function NavBar() {
               >
                 <FolderClosedIcon className='w-4 h-4 text-slate-900 dark:text-slate-100' />
                 <span>Projects</span>
+              </Link>
+              <Link
+                href='/#blog'
+                className='group w-full inline-flex gap-2 h-9 items-center justify-start rounded-md bg-transparent px-4 py-2 text-sm font-medium'
+                prefetch={false}
+              >
+                <ArchiveIcon className='w-4 h-4 text-slate-900 dark:text-slate-100' />
+                <span>Blog Archive</span>
               </Link>
               <DropdownMenuSeparator />
               <Link href='/photography'>

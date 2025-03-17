@@ -11,7 +11,8 @@ import { PhotographyMarquee } from './_components/photography-marquee';
 import { ContactList } from './_components/contact-list';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { CameraIcon } from 'lucide-react';
+import { ArchiveIcon, CameraIcon } from 'lucide-react';
+import BlogPreviewList from './_components/blog/blog-preview-list';
 
 const isSafariBrowser = () => {
   const ua = navigator.userAgent.toLowerCase();
@@ -60,6 +61,25 @@ export default function Home() {
               websites designs to coding complex web applications.
             </p>
             <ProjectBentoGrid />
+          </section>
+          <section id='blog' className='container mx-auto my-20'>
+            <h2 className='scroll-m-20 text-center pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
+              Some things I&apos;ve&nbsp;
+              <span className='text-[#438EDF]'>learnt</span>
+            </h2>
+            <p className='leading-6 text-center text-sm font-medium text-slate-500'>
+              I like to learn new things from time to time.
+              Occasionally, I come across something that piques my interest and 
+              I try my best to document it while learning.
+            </p>
+            <div className='flex justify-center items-center pt-6'>
+              <Link href='/blog' className='flex items-center gap-2'>
+                <Button variant='secondary'>
+                  <ArchiveIcon /> Browse the archive
+                </Button>
+              </Link>
+            </div>
+            <BlogPreviewList />
           </section>
           <section
             id='experience'
