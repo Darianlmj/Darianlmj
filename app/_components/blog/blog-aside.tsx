@@ -11,8 +11,8 @@ const BlogAside = ({ headings }: BlogAsideProps) => {
         On this page
       </h4>
       <div className="flex flex-col gap-2">
-        {headings.map(({ id, text }) => (
-          <a href={`#${id}`} className="text-slate-500 text-md">
+        {headings.map(({ id, text }, index) => (
+          <a key={index} href={`#${id}`} className="text-slate-500 text-md">
             {text}
           </a>
         ))}
