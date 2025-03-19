@@ -14,7 +14,7 @@
     "@astrojs/react": "3.6.2",
     "@stitches/react": "1.2.8",
     "@types/node": "^22.0.0",
-    "@types/react": "18.3.12",
+    "@types/react": "18.3.19",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
     "astro": "4.16.13",
