@@ -1,0 +1,88 @@
+---
+title: 'Distributed Denial of Service (DDoS) Attack'
+excerpt: 'A cyberattack in which the perpetrator seeks to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services of a host connected to a network.'
+publishDate: '2022-03-22'
+tags: ['Security']
+---
+
+<div className="markdown">
+
+### What are the main concepts
+
+<div className="w-full flex flex-col md:flex-row space-between gap-4">
+  <div className="w-[15rem] md:w-[25rem] flex flex-col gap-2 p-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-cctv"
+    >
+      <path d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97" />
+      <path d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z" />
+      <path d="M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15" />
+      <path d="M2 21v-4" />
+      <path d="M7 9h.01" />
+    </svg>
+    <div className="text-lg font-semibold">
+      Distributed Denial of Service (DDoS) Attack
+    </div>
+    <small className="text-slate-500 text-sm">
+      In computing, a denial-of-service attack is a cyberattack in which the
+      perpetrator seeks to make a machine or network resource unavailable to its
+      intended users by temporarily or indefinitely disrupting services of a
+      host connected to a network.
+    </small>
+  </div>
+</div>
+
+### What is it?
+
+A DDos (Distruibuted Denial of Service), is an attack which aims to bring down a target web application by means of flooding it's server with so much traffic that it inevitably shuts down.
+If you were confused by that initial explanation, allow me to clarify your understanding with the use of an example.
+
+### The Scenario
+
+Imagine you are the owner of an E-commerce store. One day, you arrived at the office and tried to access your website but you weren't able to, because for some reason, your website seems to take a really long time to load. Assuming that your engineers have done their jobs properly when setting up the various servers and whatnot, you might be experiencing a DDos attack.
+To properly understand the basis of a DDos attack, I need to walk you through what happens when a user tries to access your website.
+When you type in a URL, a request is sent through the internet to the server where the website is hosted on. This is represented as internet traffic This server will then return a copy of the website that you requested and that is what you would see on your screen.
+
+[Placeholder Image]
+
+When a DDos attack happens, a hacker will utilise a botnet to send tons of request to that website which will essentially overload the server with tons of traffic. A botnet is a network of computers (with different IP addresses) that is infected with malware which allows a hacker to control remotely.
+Because there is a ton of traffic that the server has to process, this creates a congestion in the flow of traffic and slows down or prevent's a regular user's request from being process. This effectively renders your website useless.
+
+[Placeholder Image]
+
+### How To Identify a DDos?
+
+The most common symptom of a DDoS attack is a site or service suddenly becoming slow or unavailable. But you do need to investigate further just in case there is an influx of legitimate traffic.
+
+However, here are some of the other symptoms of a DDos attack.
+
+- Suspicious amounts of traffic originating from a single IP address or IP range
+- A flood of traffic from users who share a single behavioral profile, such as device type, geolocation, or web browser version
+- An unexplained surge in requests to a single page or endpoint
+- Odd traffic patterns such as spikes at odd hours of the day or patterns that appear to be unnatural (e.g. a spike every 10 minutes)
+
+### How to Prevent a DDos?
+
+Here's a few ways to try and prevent (or at least mitigate a DDos):
+
+1. Blackhole Routing
+   In essence, an admin creates a null route (a blackhole) and reroutes all traffic there which will get dropped by the network.
+
+2. Rate Limiting
+   Limiting the number of requests that a server will accept over a certain time frame. This method will mitigate brute forcing but will not be enough to stop a DDos completely.
+
+### Resources
+
+- [What is a DDoS Attack?](https://www.youtube.com/watch?v=z503nLsfe5s) - by IBM
+- [What is a DDoS Attack?](https://www.cloudflare.com/en-au/learning/ddos/what-is-a-ddos-attack/) - by Cloudflare
+
+</div>
