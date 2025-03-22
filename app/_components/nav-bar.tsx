@@ -47,7 +47,7 @@ const HighlightsMenu = () => (
             <span>Projects</span>
           </DropdownMenuItem>
         </Link>
-        <Link href='/#blog'>
+        <Link href='/blog'>
           <DropdownMenuItem>
             <ArchiveIcon />
             <span>Blog Archive</span>
@@ -129,7 +129,7 @@ export default function NavBar() {
                 <span>Projects</span>
               </Link>
               <Link
-                href='/#blog'
+                href='/blog'
                 className='group w-full inline-flex gap-2 h-9 items-center justify-start rounded-md bg-transparent px-4 py-2 text-sm font-medium'
                 prefetch={false}
               >

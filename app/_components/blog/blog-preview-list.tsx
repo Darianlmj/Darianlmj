@@ -7,7 +7,7 @@ const BlogPreviewList = ({ limit }: { limit?: number }) => {
     : getAllPosts().sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-4">
       {blogs.map((blog, index) => (
         <BlogCard
           key={index}
