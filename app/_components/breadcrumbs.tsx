@@ -7,26 +7,41 @@ import {
   BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
 
-export function Breadcrumbs({ slug }: { slug: string }) {
+export function Breadcrumbs({
+  items
+}: {
+  items: { slug: string; name: string }[]
+}) {
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>
-            {slug
-              .split('-')
-              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(' ')}
-          </BreadcrumbPage>
-        </BreadcrumbItem>
+        {items.map((item, index) => (
+          <>
+            <BreadcrumbSeparator key={index} />
+            <BreadcrumbItem>
+              <BreadcrumbLink href={item.slug}>
+                {index === items.length - 1 ? (
+                  <BreadcrumbPage>
+                    {item.name
+                      .split('-')
+                      .map(
+                        (word) => word.charAt(0).toUpperCase() + word.slice(1)
+                      )
+                      .join(' ')}
+                  </BreadcrumbPage>
+                ) : (
+                  item.name
+                    .split('-')
+                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ')
+                )}
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </>
+        ))}
       </BreadcrumbList>
     </Breadcrumb>
   )

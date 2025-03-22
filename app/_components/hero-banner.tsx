@@ -1,6 +1,6 @@
 'use client';
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { Button } from '@/components/ui/button';
-import TypingAnimation from '@/components/ui/typing-animation';
 import Link from 'next/link';
 import React from 'react';
 import { usePathname } from 'next/navigation';
@@ -21,10 +21,7 @@ const HeroBanner = ({
       <div className='container mx-auto'>
         <div className='grid grid-cols-1 xl:grid-cols-2 gap-4'>
           <div className='flex flex-col justify-center'>
-            <TypingAnimation
-              className='scroll-m-20 text-2xl font-semibold tracking-tight'
-              text="Hi there, I'm Darian"
-            />
+          <TypewriterEffectSmooth words={[{ text: "Hi there, I'm Darian" }]} />
             <h1 className='break-words whitespace-normal scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
               {title[0]}&nbsp;
               <span className='bg-gradient-to-r from-[#7AE2E6] to-[#2461DB] bg-clip-text text-transparent'>

@@ -4,17 +4,16 @@ const slugs = [
   'typescript',
   'javascript',
   'swift',
-  'java',
+  // 'java',     // Legally asked to be removed by Oracle
   'react',
   'vuedotjs',
-  'nuxtdotjs',
   'html5',
   'css3',
   'nodedotjs',
   'express',
-  'nextdotjs',
+  'nuxt',
   'prisma',
-  'amazonaws',
+  'amazonwebservices',
   'postgresql',
   'firebase',
   'antdesign',
@@ -30,7 +29,7 @@ const slugs = [
   'rust',
   'tailwindcss',
   'figma',
-  'materialui',
+  'mui',
   'laravel',
   'php',
   'python',
@@ -47,7 +46,7 @@ const slugs = [
 
 export function InteractiveIconCloud() {
   const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
+    (slug) => `https://cdn.simpleicons.org/${slug}`
   )
 
   return (

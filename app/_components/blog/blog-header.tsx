@@ -5,7 +5,7 @@ import Image from 'next/image'
 const BlogHeader = ({ title, tags, publishDate, excerpt, slug }: Blog) => {
   return (
     <section className="flex flex-col gap-4">
-      <Breadcrumbs slug={slug} />
+      <Breadcrumbs items={[{ slug: '/blog', name: 'Blog' }, { slug, name: title }]}  />
       <div className="pt-4">
         {tags.map((tag) => (
           <div className="flex gap-2 items-center pr-4" key={tag}>

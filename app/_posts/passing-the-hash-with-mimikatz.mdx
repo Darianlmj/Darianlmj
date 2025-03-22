@@ -1,7 +1,7 @@
 ---
 title: 'Passing the Hash with Mimikatz'
 excerpt: "In this article, I'll walk you through how to use Mimikatz to obtain user passwords from a Windows machine. I'll also show you how to use Mimikatz in order to perform an attack called passing the hash (pth) to escalate your privileges and impersonate a user. Also as a bonus, I'll show you how you can utilise both a Meterpreter reverse shell and a phishing attack in order to get the same outcome but without needing physical access to the target's machine."
-publishDate: '2020-03-16T05:35:07.322Z'
+publishDate: '2022-04-07'
 tags: ['Security']
 ---
 
@@ -99,7 +99,7 @@ sekurlsa::pth /user:User /domain:[insert_user_domain_here] /ntlm:[insert_hash_he
 
 7. A new console opens up.
 8. Demonstrate that the system thinks we are still `FakeUser` but we definitely are `User`.
-9. Now try changing the password and it will work. This is an pre-recording I did in case the lightning talk went sideways. If you can't view the recording below, use this link instead: <a className='text-[#438EDF] hover:text-[#2268B4] underline underline-offset-2' href="https://youtu.be/MLizeTI0jr4">Mimikatz Video</a>
+9. Now try changing the password and it will work. This is an pre-recording I did in case the lightning talk went sideways. If you can't view the recording below, use this link instead: [Mimikatz Video](https://youtu.be/MLizeTI0jr4)
 
 <div className="flex w-full justify-center py-4">
   <iframe
