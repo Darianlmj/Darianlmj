@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import darian from '@/public/assets/darian.jpeg'
+import darian from '@/public/assets/darian.webp'
 import EducationList from './_components/education-list'
 import HeroBanner from './_components/hero-banner'
 import { InteractiveIconCloud } from './_components/interactive-icon-cloud'

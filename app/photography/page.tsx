@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import useMasonry from '@/hooks/useMasonry';
-import darianPhotography from '@/public/assets/darian-photography.jpeg';
+import darianPhotography from '@/public/assets/darian-photography.webp';
 import Image from 'next/image';
 import HeroBanner from '../_components/hero-banner';
 import { ContactList } from '../_components/contact-list';

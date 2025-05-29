@@ -19,7 +19,7 @@ const BlogHeader = ({ title, tags, publishDate, excerpt, slug }: Blog) => {
       <h1 className="relative w-fit scroll-m-20 text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">
         {title}
         <Image
-          src="/assets/illustrations/sparkles.png"
+          src="/assets/illustrations/sparkles.webp"
           alt="Sparkle"
           width={40}
           height={40}
