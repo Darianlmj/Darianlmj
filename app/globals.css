@@ -98,3 +98,26 @@ body {
 .markdown a {
   @apply text-slate-900 font-semibold hover:text-[#2268B4] underline underline-offset-2 decoration-[#438EDF] decoration-2 transition-all;
 }
+
+figure[data-rehype-pretty-code-figure] pre {
+  @apply overflow-x-auto p-4;
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+ 
+code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 0.75rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: gray;
+}
+ 
+
+/* code[data-theme*=" "] {
+  @apply 
+} */

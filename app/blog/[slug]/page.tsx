@@ -1,20 +1,22 @@
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { getAllPosts, getPostBySlug } from '@/lib/api'
-import markdownToHtml from '@/lib/markdownToHtml'
-import BlogHeader from '@/app/_components/blog/blog-header'
-import { Blog } from '@/app/_data/blogs'
-import BlogBody from '@/app/_components/blog/blog-body'
-import BlogAside from '@/app/_components/blog/blog-aside'
+import BlogAside from "@/app/_components/blog/blog-aside";
+import BlogHeader from "@/app/_components/blog/blog-header";
+import { Blog } from "@/app/_data/blogs";
+import { getAllPosts, getPostBySlug } from "@/lib/api";
+import markdownToHtml from "@/lib/markdownToHtml";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export default async function Post({ params }: Params) {
-  const blog = getPostBySlug((await params).slug)
+  const slug = (await params).slug;
+  const blog = getPostBySlug(slug);
 
   if (!blog) {
-    return notFound()
+    return notFound();
   }
 
-  const { content, headings } = await markdownToHtml(blog.content || '')
+  const { default: BlogBody } = await import(`@/app/_posts/${slug}.mdx`);
+
+  const { content, headings } = await markdownToHtml(blog.content || "");
 
   return (
     <main>
@@ -29,41 +31,41 @@ export default async function Post({ params }: Params) {
             content={content}
           />
 
-          <BlogBody content={content} />
+          <BlogBody />
         </article>
-        <BlogAside headings={headings}/>
+        <BlogAside headings={headings} />
       </div>
     </main>
-  )
+  );
 }
 
 type Params = {
   params: Promise<{
-    slug: string
-  }>
-}
+    slug: string;
+  }>;
+};
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const blog = getPostBySlug((await params).slug)
+  const blog = getPostBySlug((await params).slug);
 
   if (!blog) {
-    return notFound()
+    return notFound();
   }
 
-  const title = `${blog.title} | Darian Lee`
+  const title = `${blog.title} | Darian Lee`;
 
   return {
     title,
     openGraph: {
-      title
-    }
-  }
+      title,
+    },
+  };
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts()
+  const posts = getAllPosts();
 
   return posts.map((blog: Blog) => ({
-    slug: blog.slug
-  }))
+    slug: blog.slug,
+  }));
 }
