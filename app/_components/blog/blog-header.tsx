@@ -23,7 +23,7 @@ const BlogHeader = ({ title, tags, publishDate, excerpt, slug }: Blog) => {
           alt="Sparkle"
           width={40}
           height={40}
-          className="absolute -right-12 -top-20 md:-right-20 w-40 h-40 inline-block"
+          className="absolute -right-20 -top-20 w-40 h-40 inline-block"
         />
       </h1>
       <p className="leading-6 text-sm font-medium text-slate-500">

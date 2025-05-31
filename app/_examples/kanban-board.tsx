@@ -33,7 +33,7 @@ export default function KanbanBoard() {
   return (
     <div
       id="kanban-board"
-      className="w-full p-8 rounded-sm flex flex-row gap-8"
+      className="w-full p-8 rounded-sm flex flex-col md:flex-row gap-8"
     >
       <div className="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
