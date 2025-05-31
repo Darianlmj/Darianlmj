@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import covergenius from '@/public/assets/covergenius.png';
-import unsw from '@/public/assets/unsw.png';
+import covergenius from '@/public/assets/covergenius.webp';
+import unsw from '@/public/assets/unsw.webp';
 
 const workExperience = [
   {

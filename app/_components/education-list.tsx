@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import unsw from '@/public/assets/unsw.png';
+import unsw from '@/public/assets/unsw.webp';
 
 const educationList = [
   {

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
-import jobsboard from '@/public/assets/jobsboard.jpg';
-import aseansoc from '@/public/assets/aseansoc.jpg';
-import xtraCare from '@/public/assets/xtra-care.jpg';
+import jobsboard from '@/public/assets/jobsboard.webp';
+import aseansoc from '@/public/assets/aseansoc.webp';
+import xtraCare from '@/public/assets/xtra-care.webp';
 import React from 'react';
 const features = [
   {

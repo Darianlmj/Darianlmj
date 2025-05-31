@@ -1,0 +1,81 @@
+---
+title: 'CTF Tools'
+excerpt: 'A collection of helpful tools and links to help you on your CTF journey.'
+publishDate: '2022-04-01'
+tags: ['Security']
+---
+
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
+import { InfoIcon } from 'lucide-react'
+
+<div className="markdown">
+
+<div className="grid w-full my-8 items-start gap-4">
+  <Alert variant="destructive" className="w-full gap-4">
+    <InfoIcon className='w-5'/>
+    <AlertTitle className="font-semibold">The contents in this article may be outdated</AlertTitle>
+    <AlertDescription>This article was made as a part of Cookies.sh – a project that I made in my university days to educate people about topics in Security.</AlertDescription>
+  </Alert>
+</div>
+
+### What will you learn?
+
+<div className="w-full flex flex-col md:flex-row space-between gap-4">
+  <div className="w-[15rem] md:w-[25rem] flex flex-col gap-2 p-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-land-plot"
+    >
+      <path d="m12 8 6-3-6-3v10" />
+      <path d="m8 11.99-5.5 3.14a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12" />
+      <path d="m6.49 12.85 11.02 6.3" />
+      <path d="M17.51 12.85 6.5 19.15" />
+    </svg>
+    <div className="text-lg font-semibold">Capture the Flag (CTF)</div>
+    <small className="text-slate-500 text-sm">
+      In cybersecurity, CTF competitions are exercises in which participants,
+      are challenged to find and exploit vulnerabilities in a system to capture
+      a "flag" or piece of information
+    </small>
+  </div>
+</div>
+
+### Web Application
+
+1. [Burp Suite](https://portswigger.net/burp). A paid platform but a useful for performing security testing of web applications. More suitable for experienced people.
+2. [ZAP](https://www.zaproxy.org/). OWASP ZAP is an open-source web application security scanner. It is intended to be used by both those new to application security as well as professionals.
+3. [SQL Map](https://sqlmap.org/). An overpowered open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
+
+### Forensics
+
+1. [Aircrack-ng](https://www.aircrack-ng.org/). A complete suite of tools to assess WiFi network security.
+2. [Wireshark](https://www.wireshark.org/). Analysing network packets.
+3. [Audacity](http://sourceforge.net/projects/audacity/). Analyze sound files (usually helpful in those morse code challenges).
+4. [Exif tool](https://exiftool.org/). A cli tool to inspect files to see if they contain any hidden file signatures.
+5. [Microsoft Paint](https://jspaint.app/). Useful for uncovering hidden messages in images. If you don't have a Windows machine, you might find this link helpful.
+
+### Reverse Engineering
+
+1. [Binwalk](https://github.com/ReFirmLabs/binwalk). Binwalk is a tool for searching a given binary image for embedded files and executable code. Specifically, it is designed for identifying files and code embedded inside of firmware images.
+2. [Binary-Ninja](https://binary.ninja/). An interactive disassembler, decompiler, and binary analysis platform
+3. [Ghidra](https://ghidra-sre.org/). An NSA developed tool for reverse engineering. Similar to binary ninja.
+4. [IDA Pro](https://www.hex-rays.com/ida-pro/). Similar to Binary-Ninja and Ghidra.
+5. [GDB](https://www.sourceware.org/gdb/). Debugging cli tool. Self explanatory if you've taken a UNSW computing course especially COMP2521.
+
+### Cryptography
+
+1. [CyberChef](https://gchq.github.io/CyberChef/). A free tool which has a little of everything.
+2. [ZAP](https://www.zaproxy.org/). OWASP ZAP is an open-source web application security scanner. It is intended to be used by both those new to application security as well as professionals.
+3. [SQL Map](https://sqlmap.org/). An overpowered open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
+
+There is literally so many more tools out there but these are just some of the tools that I have used before and I would recommend. There is also a fantastic website which aims to do the same thing in this article but in more depth. You can check it out here: https://c4pr1c3.github.io/awesome-ctf/
+
+</div>
