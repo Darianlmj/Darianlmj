@@ -5,7 +5,18 @@ publishDate: '2022-04-07'
 tags: ['Security']
 ---
 
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
+import { InfoIcon } from 'lucide-react'
+
 <div className="markdown">
+
+<div className="grid w-full my-8 items-start gap-4">
+  <Alert variant="destructive" className="w-full gap-4">
+    <InfoIcon className='w-5'/>
+    <AlertTitle>The contents in this article may be outdated</AlertTitle>
+    <AlertDescription>This article was made as a part of Cookies.sh – a project that I made in my university days to educate people about topics in Security.</AlertDescription>
+  </Alert>
+</div>
 
 ### What are the main concepts
 
@@ -106,9 +117,8 @@ sekurlsa::pth /user:User /domain:[insert_user_domain_here] /ntlm:[insert_hash_he
     width="710"
     height="398"
     src="https://www.youtube.com/embed/MLizeTI0jr4"
-    frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowFullScreen
     className="rounded-sm"
   ></iframe>
 </div>

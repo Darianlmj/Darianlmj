@@ -88,15 +88,39 @@ body {
 }
 
 .markdown pre {
-  @apply bg-slate-100 p-4 text-slate-900 rounded-sm overflow-auto;
+  @apply bg-secondary p-4 my-4 text-slate-900 rounded-sm overflow-auto;
 }
 
 .markdown code {
-  @apply inline-flex items-center border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-sm px-1 rounded-sm font-bold font-[family-name:var(--font-jetbrains-mono)];
+  @apply inline-flex items-center border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent text-secondary-foreground bg-secondary hover:bg-secondary/80 text-sm px-1 rounded-sm font-bold font-[family-name:var(--font-jetbrains-mono)];
+}
+
+.markdown span[data-highlighted-line] {
+  @apply bg-slate-200 dark:bg-slate-900
 }
 
 .markdown a {
-  @apply text-slate-900 font-semibold hover:text-[#2268B4] underline underline-offset-2 decoration-[#438EDF] decoration-2 transition-all;
+  @apply text-slate-900 dark:text-slate-100 font-semibold hover:text-[#2268B4] underline underline-offset-2 decoration-[#438EDF] decoration-2 transition-all;
+}
+
+.markdown strong {
+  @apply  text-slate-700 dark:text-slate-400
+}
+
+.markdown table {
+  @apply w-full
+}
+
+.markdown tr {
+  @apply even:bg-muted m-0 border-t p-0
+}
+
+.markdown th {
+  @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right
+}
+
+.markdown td {
+  @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right
 }
 
 figure[data-rehype-pretty-code-figure] pre {
@@ -116,8 +140,7 @@ code[data-line-numbers] > [data-line]::before {
   text-align: right;
   color: gray;
 }
- 
 
-/* code[data-theme*=" "] {
-  @apply 
-} */
+div[role="alert"] {
+  @apply dark:text-red-500 dark:border-red-500 [&>svg]:dark:text-red-500
+}

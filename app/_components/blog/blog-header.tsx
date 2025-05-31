@@ -16,7 +16,7 @@ const BlogHeader = ({ title, tags, publishDate, excerpt, slug }: Blog) => {
           </div>
         ))}
       </div>
-      <h1 className="relative w-fit scroll-m-20 text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">
+      <h1 className="relative w-fit scroll-m-20 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 lg:text-5xl">
         {title}
         <Image
           src="/assets/illustrations/sparkles.webp"
@@ -34,7 +34,7 @@ const BlogHeader = ({ title, tags, publishDate, excerpt, slug }: Blog) => {
           year: 'numeric'
         })}
       </p>
-      <p className="leading-6 font-medium text-slate-900 text-justify">
+      <p className="leading-6 font-medium text-slate-900 dark:text-slate-100 text-justify">
         {excerpt}
       </p>
     </section>

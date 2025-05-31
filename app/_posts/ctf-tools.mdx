@@ -5,13 +5,18 @@ publishDate: '2022-04-01'
 tags: ['Security']
 ---
 
-```js showLineNumbers
-function add(a, b) {
-  return a + b;
-}
-```
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
+import { InfoIcon } from 'lucide-react'
 
 <div className="markdown">
+
+<div className="grid w-full my-8 items-start gap-4">
+  <Alert variant="destructive" className="w-full gap-4">
+    <InfoIcon className='w-5'/>
+    <AlertTitle className="font-semibold">The contents in this article may be outdated</AlertTitle>
+    <AlertDescription>This article was made as a part of Cookies.sh – a project that I made in my university days to educate people about topics in Security.</AlertDescription>
+  </Alert>
+</div>
 
 ### What are the main concepts
 
@@ -24,10 +29,10 @@ function add(a, b) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-land-plot"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-land-plot"
     >
       <path d="m12 8 6-3-6-3v10" />
       <path d="m8 11.99-5.5 3.14a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12" />
@@ -45,75 +50,31 @@ function add(a, b) {
 
 ### Web Application
 
-1. Burp Suite. A paid platform but a useful for performing security testing of web applications. More suitable for experienced people.
-
-   https://portswigger.net/burp
-
-2. ZAP. OWASP ZAP is an open-source web application security scanner. It is intended to be used by both those new to application security as well as professionals.
-
-   https://www.zaproxy.org/
-
-3. SQL Map. An overpowered open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
-
-   https://sqlmap.org/
+1. [Burp Suite](https://portswigger.net/burp). A paid platform but a useful for performing security testing of web applications. More suitable for experienced people.
+2. [ZAP](https://www.zaproxy.org/). OWASP ZAP is an open-source web application security scanner. It is intended to be used by both those new to application security as well as professionals.
+3. [SQL Map](https://sqlmap.org/). An overpowered open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
 
 ### Forensics
 
-1. Aircrack-ng. A complete suite of tools to assess WiFi network security.
-
-   https://www.aircrack-ng.org/
-
-2. Wireshark. Analysing network packets.
-
-   https://www.wireshark.org/
-
-3. Audacity. Analyze sound files (usually helpful in those morse code challenges).
-
-   http://sourceforge.net/projects/audacity/
-
-4. Exif tool. A cli tool to inspect files to see if they contain any hidden file signatures.
-
-   https://exiftool.org/
-
-5. Microsoft Paint. Useful for uncovering hidden messages in images. If you don't have a Windows machine, you might find this link helpful.
-
-   https://jspaint.app/
+1. [Aircrack-ng](https://www.aircrack-ng.org/). A complete suite of tools to assess WiFi network security.
+2. [Wireshark](https://www.wireshark.org/). Analysing network packets.
+3. [Audacity](http://sourceforge.net/projects/audacity/). Analyze sound files (usually helpful in those morse code challenges).
+4. [Exif tool](https://exiftool.org/). A cli tool to inspect files to see if they contain any hidden file signatures.
+5. [Microsoft Paint](https://jspaint.app/). Useful for uncovering hidden messages in images. If you don't have a Windows machine, you might find this link helpful.
 
 ### Reverse Engineering
 
-1. Binwalk. Binwalk is a tool for searching a given binary image for embedded files and executable code. Specifically, it is designed for identifying files and code embedded inside of firmware images.
-
-   https://github.com/ReFirmLabs/binwalk
-
-2. Binary-Ninja. An interactive disassembler, decompiler, and binary analysis platform
-
-   https://binary.ninja/
-
-3. Ghidra. An NSA developed tool for reverse engineering. Similar to binary ninja.
-
-   https://ghidra-sre.org/
-
-4. IDA Pro. Similar to Binary-Ninja and Ghidra.
-
-   https://www.hex-rays.com/ida-pro/
-
-5. GDB. Debugging cli tool. Self explanatory if you've taken a UNSW computing course especially COMP2521.
-
-   https://www.sourceware.org/gdb/
+1. [Binwalk](https://github.com/ReFirmLabs/binwalk). Binwalk is a tool for searching a given binary image for embedded files and executable code. Specifically, it is designed for identifying files and code embedded inside of firmware images.
+2. [Binary-Ninja](https://binary.ninja/). An interactive disassembler, decompiler, and binary analysis platform
+3. [Ghidra](https://ghidra-sre.org/). An NSA developed tool for reverse engineering. Similar to binary ninja.
+4. [IDA Pro](https://www.hex-rays.com/ida-pro/). Similar to Binary-Ninja and Ghidra.
+5. [GDB](https://www.sourceware.org/gdb/). Debugging cli tool. Self explanatory if you've taken a UNSW computing course especially COMP2521.
 
 ### Cryptography
 
-1. CyberChef. A free tool which has a little of everything.
-
-   https://gchq.github.io/CyberChef/
-
-2. ZAP. OWASP ZAP is an open-source web application security scanner. It is intended to be used by both those new to application security as well as professionals.
-
-   https://www.zaproxy.org/
-
-3. SQL Map. An overpowered open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
-
-   https://sqlmap.org/
+1. [CyberChef](https://gchq.github.io/CyberChef/). A free tool which has a little of everything.
+2. [ZAP](https://www.zaproxy.org/). OWASP ZAP is an open-source web application security scanner. It is intended to be used by both those new to application security as well as professionals.
+3. [SQL Map](https://sqlmap.org/). An overpowered open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
 
 There is literally so many more tools out there but these are just some of the tools that I have used before and I would recommend. There is also a fantastic website which aims to do the same thing in this article but in more depth. You can check it out here: https://c4pr1c3.github.io/awesome-ctf/
 

@@ -5,7 +5,18 @@ publishDate: '2022-04-07'
 tags: ['Security']
 ---
 
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
+import { InfoIcon } from 'lucide-react'
+
 <div className="markdown">
+
+<div className="grid w-full my-8 items-start gap-4">
+  <Alert variant="destructive" className="w-full gap-4">
+    <InfoIcon className='w-5'/>
+    <AlertTitle>The contents in this article may be outdated</AlertTitle>
+    <AlertDescription>This article was made as a part of Cookies.sh – a project that I made in my university days to educate people about topics in Security.</AlertDescription>
+  </Alert>
+</div>
 
 ### What is a computer?
 

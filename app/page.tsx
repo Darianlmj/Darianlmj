@@ -21,7 +21,7 @@ export default function Home() {
           description="I love experimenting and developing with exciting new technologies. I also dabble in  product design, illustration and photography."
           focusWord="Software Engineer"
         />
-        <div className="w-full pt-20 sm:px-10 lg:px-30 xl:px-60">
+        <div className="w-full pt-20 mx-auto container">
           <section id="nerd-stuff" className="container mx-auto my-20">
             <h2 className="scroll-m-20 text-center pb-2 text-3xl font-semibold tracking-tight first:mt-0">
               Nerd&nbsp;

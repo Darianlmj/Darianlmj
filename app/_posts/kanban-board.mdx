@@ -1,0 +1,415 @@
+---
+title: 'Kanban Board'
+excerpt: "Ever wondered how tools like Jira or Linear manage their boards? Here's a fun UI challenge, making a Kanban board. I'll try walking you through how to build a simple Kanban board from scratch — explained as easy as possible."
+publishDate: '2025-05-29'
+tags: ['Frontend']
+---
+
+import Kanban from '@/app/_examples/kanban-board'
+
+<div className="markdown">
+
+### What will you learn
+
+<div className="w-full flex flex-col md:flex-row space-between gap-4">
+  <div className="w-[15rem] md:w-[25rem] flex flex-col gap-2 p-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-component-icon lucide-component"
+    >
+      <path d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
+      <path d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z" />
+      <path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z" />
+      <path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
+    </svg>
+    <div className="text-lg font-semibold">UI Component</div>
+    <small className="text-slate-500 text-sm">
+      This article introduces the Kanban Board UI component. Popular in task
+      tracking tools like Jira, Linear and Trello.
+    </small>
+  </div>
+
+  <div className="w-[15rem] md:w-[25rem] flex flex-col gap-2 p-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-book-type-icon lucide-book-type"
+    >
+      <path d="M10 13h4" />
+      <path d="M12 6v7" />
+      <path d="M16 8V6H8v2" />
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
+    </svg>
+    <div className="text-lg font-semibold">Languages Used</div>
+    <small className="text-slate-500 text-sm">
+      This article will demonstrate the UI component being made using vanilla HTML and JS and styled using TailwindCSS.
+    </small>
+  </div>
+</div>
+
+### What is a Kanban Board?
+
+A Kanban board in a user interface (UI) is a visual project management tool used to organize tasks and workflows. It typically consists of columns representing different stages of a process (such as "To Do," "In Progress," and "Done") and movable cards representing individual tasks or items. Users can drag and drop cards between columns to reflect progress, making it easy to track the status of work at a glance. Kanban boards help teams visualize work, limit work-in-progress, and optimize task flow in a clear and intuitive manner.
+
+### How do we make one?
+
+Making a kanban board is surprisingly simpler than you might think. Even though it might seem like a big component, we can break it down into smaller requirements. Let's take a look:
+
+#### Requirements
+
+1. The Kanban Board should have 3 columns representing the different states
+2. A board could have ≥ 0 card(s) in it.
+3. A card should be **draggable**.
+4. A card can be dragged into another column. It could also be rearranged in it's current column by dragging it above/below another card.
+5. Once a card has been **dropped** into another column, the card should no longer be visible in the original column but instead should appear in the new column.
+
+Now that we have a set of requirements, we can start to implement it. We're going to focus on the 2 main aspects, the HTML and JS:
+
+#### The HTML
+
+1. Create a wrapper for the board.
+
+```html showLineNumbers
+<div
+  id="kanban-board"
+  class="w-full p-8 rounded-sm flex flex-row gap-8"
+></div>
+```
+
+2. Let's assume our kanban board has 3 columns. `Todo`, `In Progress` and `Done` (pretty standard). This can be represented by 3 sibling divs:
+
+```html showLineNumbers
+<div
+  id="kanban-board"
+  class="w-full p-8 rounded-sm flex flex-row gap-8"
+>
+  <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">To Do</h3>
+    <div class="kanban-column-body min-h-[250px]"></div>
+  </div>
+  <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">In Progress</h3>
+    <div class="kanban-column-body min-h-[250px]"></div>
+  </div>
+  <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">Done</h3>
+    <div class="kanban-column-body min-h-[250px]"></div>
+  </div>
+</div>
+```
+
+3. Now that we have the columns defined, we'll need to a child div to each column since each column will potentially have cards in it. I've included 2 cards in the `Todo` column to use as an example later on.
+   Note that for each card, a **draggable** attribute is applied. This declares the card as a draggble block.
+
+```html showLineNumbers /draggable/
+<div
+  id="kanban-board"
+  class="w-full p-8 rounded-sm flex flex-row gap-8"
+>
+  <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">To Do</h3>
+    <div class="kanban-column-body min-h-[250px]">
+      <div
+        class="kanban-card font-semibold border-l-4 border-l-blue-500 shadow-sm bg-white dark:bg-slate-600 transition-all ease-in-out duration-100 hover:bg-slate-200 dark:hover:bg-slate-600 p-4 mb-4 cursor-move"
+        draggable
+      >
+        Task 1
+      </div>
+      <div
+        class="kanban-card font-semibold border-l-4 border-l-blue-500 shadow-sm bg-white dark:bg-slate-600 transition-all ease-in-out duration-100 hover:bg-slate-200 dark:hover:bg-slate-600 p-4 mb-4 cursor-move"
+        draggable
+      >
+        Task 2
+      </div>
+    </div>
+  </div>
+  <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">In Progress</h3>
+    <div class="kanban-column-body min-h-[250px]"></div>
+  </div>
+  <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">Done</h3>
+    <div class="kanban-column-body min-h-[250px]"></div>
+  </div>
+</div>
+```
+
+#### The JavaScript
+
+This is where the magic happens. We'll be utilising the HTML Drag and Drop API to make this work. But before I get into the main logic, let's take a step back and understand what API's are going to be involved.
+In this API, there are a few events that we'll have to get familiar with:
+
+<div className="my-6 w-full overflow-y-auto">
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Fires when...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a
+            href="/en-US/docs/Web/API/HTMLElement/dragend_event"
+            title="dragend"
+          >
+            <code>dragend</code>
+          </a>
+        </td>
+        <td>
+          ...a drag operation ends (such as releasing a mouse button or hitting
+          the Esc key; see [Finishing a
+          Drag](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#finishing_a_drag).)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="/en-US/docs/Web/API/HTMLElement/dragover_event"
+            title="dragover"
+          >
+            <code>dragover</code>
+          </a>
+        </td>
+        <td>
+          ...a dragged item is being dragged over a valid drop target, every few
+          hundred milliseconds.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="/en-US/docs/Web/API/HTMLElement/dragstart_event"
+            title="dragstart"
+          >
+            <code>dragstart</code>
+          </a>
+        </td>
+        <td>
+          ...the user starts dragging an item. (See [Starting a Drag
+          Operation](en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#starting_a_drag_operation).)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/en-US/docs/Web/API/HTMLElement/drop_event" title="drop">
+            <code>drop</code>
+          </a>
+        </td>
+        <td>
+          ...an item is dropped on a valid drop target. (See [Performing a
+          Drop](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#performing_a_drop).)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+Those are basically all the event listeners that we need to account for here. Simple right? Now let's write the JavaScript:
+
+1. Let's first deal with the event listeners for the columns.
+
+```js showLineNumbers
+// Get all column drop areas
+const columns = document.querySelectorAll('.kanban-column-body')
+```
+
+2. On each of these column bodies, we need to handle what happens when a card is dropped (ie. when the mouse is released while a card is hovering inside a column body)
+
+```js showLineNumbers
+columns.forEach((column) => {
+  column.addEventListener('drop', (e) => {
+    if (draggedCard) {
+      column.appendChild(draggedCard)
+    }
+  })
+})
+```
+
+3. There is one more thing to account for. Since the default behaviour of the **dragover** event is to prevent dropping of elements onto the target element, we'll need to disable this behaviour.
+
+```js showLineNumbers {8-11}
+columns.forEach((column) => {
+  column.addEventListener('drop', (e) => {
+    if (draggedCard) {
+      column.appendChild(draggedCard)
+    }
+  })
+
+  column.addEventListener('dragover', (e) => {
+    // Allows dropping the cards
+    e.preventDefault()
+  })
+})
+```
+
+4. Now we can move on to dealing with the cards' event listeners. Let's start by grabbing all the available cards:
+
+```js showLineNumbers
+// Keeps track of which card is being dragged at the moment
+let draggedCard = null
+
+// Get all draggable cards
+const cards = document.querySelectorAll('.kanban-card')
+```
+
+5. For each card, we need to define what will happen when we start dragging it and what happens when the dragging ends. For the start of the drag:
+
+```js showLineNumbers
+let draggedCard = null
+
+// Get all draggable cards
+const cards = document.querySelectorAll('.kanban-card')
+
+cards.forEach((card) => {
+  // Handle the dragstart event
+  card.addEventListener('dragstart', (e) => {
+    draggedCard = card
+    setTimeout(() => {
+      // Hide the original card while dragging
+      card.style.display = 'none'
+    }, 0)
+  })
+})
+```
+
+Now you might be wondering why is there a `setTimout` callback present. Well, without this, if you immediately call `card.style.display = 'none'` synchronously inside dragstart, the browser will not render the drag image (the ghost image that follows your cursor). That's because:
+
+- The browser starts computing and rendering the drag feedback image at the same time as dragstart fires.
+- If you hide the element before the browser captures that image, it ends up with nothing to render.
+
+Think of the `setTimeout` callback acting as the equivalent of a `nextTick()` (if you're familiar with VueJS)
+
+6. Lastly, we need to handle what happens when the dragging ends:
+
+```js showLineNumbers
+let draggedCard = null
+
+// Get all draggable cards
+const cards = document.querySelectorAll('.kanban-card')
+
+cards.forEach((card) => {
+  // Handle the dragstart event
+  card.addEventListener('dragstart', (e) => {
+    draggedCard = card
+    setTimeout(() => {
+      // Hide the original card while dragging
+      card.style.display = 'none'
+    }, 0)
+  })
+
+  // Handle the dragend event
+  card.addEventListener('dragend', (e) => {
+    setTimeout(() => {
+      // Show after drop
+      card.style.display = 'block'
+      draggedCard = null
+    }, 0)
+  })
+})
+```
+
+### The result
+
+Now let's put all of the code together and see what happens:
+
+```html showLineNumbers
+<div
+  id="kanban-board"
+  class="w-full p-8 rounded-sm flex flex-row gap-8"
+>
+  <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">To Do</h3>
+    <div class="kanban-column-body min-h-[250px]">
+      <div
+        class="kanban-card font-semibold border-l-4 border-l-blue-500 shadow-sm bg-white dark:bg-slate-600 transition-all ease-in-out duration-100 hover:bg-slate-200 dark:hover:bg-slate-600 p-4 mb-4 cursor-move"
+        draggable
+      >
+        Task 1
+      </div>
+      <div
+        class="kanban-card font-semibold border-l-4 border-l-blue-500 shadow-sm bg-white dark:bg-slate-600 transition-all ease-in-out duration-100 hover:bg-slate-200 dark:hover:bg-slate-600 p-4 mb-4 cursor-move"
+        draggable
+      >
+        Task 2
+      </div>
+    </div>
+  </div>
+  <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">In Progress</h3>
+    <div class="kanban-column-body min-h-[250px]"></div>
+  </div>
+  <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">Done</h3>
+    <div class="kanban-column-body min-h-[250px]"></div>
+  </div>
+</div>
+
+<script>
+  let draggedCard = null
+
+  // Get all draggable cards
+  const cards = document.querySelectorAll('.kanban-card')
+  
+  cards.forEach((card) => {
+    // Handle the dragstart event
+    card.addEventListener('dragstart', (e) => {
+      draggedCard = card
+      setTimeout(() => {
+        // Hide the original card while dragging
+        card.style.display = 'none'
+      }, 0)
+    })
+  
+    // Handle the dragend event
+    card.addEventListener('dragend', (e) => {
+      setTimeout(() => {
+        // Show after drop
+        card.style.display = 'block'
+        draggedCard = null
+      }, 0)
+    })
+  })
+
+  // Get all column drop areas
+  const columns = document.querySelectorAll('.kanban-column-body')
+  columns.forEach((column) => {
+    column.addEventListener('dragover', (e) => {
+      // Allows dropping the cards
+      e.preventDefault()
+    })
+
+    column.addEventListener('drop', (e) => {
+      if (draggedCard) {
+        column.appendChild(draggedCard)
+      }
+    })
+  })
+</script>
+```
+
+Feel free to have a play around with the resulting Kanban Board below.
+
+<Kanban/>
+
+</div>
+
+### Resources
+
+- [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+</div>

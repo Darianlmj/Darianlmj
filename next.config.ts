@@ -8,11 +8,12 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
 const options: RehypePrettyCodeOptions = {
   theme: "one-dark-pro",
+  keepBackground: false,
 };
 
 const nextConfig: NextConfig = {
   images: { unoptimized: true },
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  pageExtensions: ["mdx", "ts", "tsx"],
   reactStrictMode: true,
   experimental: {
     mdxRs: false,
