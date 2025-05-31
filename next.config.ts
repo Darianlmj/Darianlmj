@@ -12,6 +12,7 @@ const options: RehypePrettyCodeOptions = {
 };
 
 const nextConfig: NextConfig = {
+  output: 'export',
   images: { unoptimized: true },
   pageExtensions: ["mdx", "ts", "tsx"],
   reactStrictMode: true,
