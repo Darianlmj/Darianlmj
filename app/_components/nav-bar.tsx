@@ -22,6 +22,7 @@ import {
   ArchiveIcon
 } from 'lucide-react';
 import { ThemeToggle } from './theme-toggle';
+import { usePathname } from 'next/navigation';
 
 const HighlightsMenu = () => (
   <DropdownMenu>
@@ -95,14 +96,14 @@ export default function NavBar() {
             <SheetTitle>Menu</SheetTitle>
             <div className='grid gap-2 py-6'>
               <Link
-                href='#about'
+                href={usePathname().includes('/photography') ? '/photography#about' : '/#about'}
                 className='group w-full inline-flex h-9 items-center justify-start rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50'
                 prefetch={false}
               >
                 About
               </Link>
               <Link
-                href='#contact'
+                href={usePathname().includes('/photography') ? '/photography#contact' : '/#contact'}
                 className='group w-full inline-flex h-9 items-center justify-start rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50'
                 prefetch={false}
               >
@@ -161,14 +162,14 @@ export default function NavBar() {
         </Sheet>
         <nav className='ml-auto hidden lg:flex gap-2'>
           <Link
-            href='#about'
+            href={usePathname().includes('/photography') ? '/photography#about' : '/#about'}
             className='group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:cursor-pointer hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50'
             prefetch={false}
           >
             About
           </Link>
           <Link
-            href='#contact'
+            href={usePathname().includes('/photography') ? '/photography#contact' : '/#contact'}
             className='group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:cursor-pointer hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50'
             prefetch={false}
           >
