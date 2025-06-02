@@ -20,7 +20,7 @@ const BlogAside = ({ headings }: BlogAsideProps) => {
   }
 
   return (
-    <aside className="hidden xl:block flex-1 max-w-[25rem] gap-4 p-8 min-h-screen w-full sticky top-10">
+    <aside className="order-last hidden shrink-0 lg:block w-56 gap-4 px-8 min-h-screen sticky top-16">
       <h4 className="scroll-m-20 text-2xl mb-4 font-semibold tracking-tight">
         On this page
       </h4>

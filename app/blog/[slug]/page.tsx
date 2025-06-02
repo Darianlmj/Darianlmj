@@ -22,7 +22,7 @@ export default async function Post({ params }: Params) {
   return (
     <main>
       <div className="flex container mx-auto items-start min-h-screen p-8 gap-8 sm:px-32 font-[family-name:var(--font-inter)]">
-        <article className="flex-1 w-full">
+        <article className="w-full min-w-0 max-w-6xl px-1 md:px-6">
           <BlogHeader
             title={blog.title}
             tags={blog.tags}
