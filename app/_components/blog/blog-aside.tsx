@@ -33,7 +33,7 @@ const BlogAside = ({ headings }: BlogAsideProps) => {
               className={`text-md transition-colors ${
                 activeId === id
                   ? 'text-blue-500 font-semibold'
-                  : 'text-secondary-foreground'
+                  : 'text-muted-foreground'
               }`}
             >
               {text}
@@ -48,7 +48,7 @@ const BlogAside = ({ headings }: BlogAsideProps) => {
                     className={`text-md transition-colors ${
                       activeId === id
                         ? 'text-blue-500 font-semibold'
-                        : 'text-secondary-foreground'
+                        : 'text-muted-foreground'
                     }`}
                   >
                     {text}

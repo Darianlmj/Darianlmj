@@ -92,7 +92,7 @@ const PhotoCollection = () => {
         Looking for something more&nbsp;
         <span className="text-[#438EDF]">specific?</span>
       </h2>
-      <p className="leading-6 text-center text-sm font-medium text-secondary-foreground">
+      <p className="leading-6 text-center text-sm font-medium text-muted-foreground">
         Check out some of my photo collections grouped by country. Find out more
         about each photo in the collection.
       </p>

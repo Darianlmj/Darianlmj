@@ -27,7 +27,7 @@ export function PhotoCard({ photo }: { photo: Photo }) {
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=="
             className="object-cover w-full h-auto block"
           />
-          <p className="text-sm text-secondary-foreground">{photo.location}</p>
+          <p className="text-sm text-muted-foreground">{photo.location}</p>
         </motion.div>
       </DialogTrigger>
       <DialogContent className="max-h-[90vh]">

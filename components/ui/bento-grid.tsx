@@ -68,9 +68,7 @@ const BentoCard = ({
       <small className="text-xs text-slate-900 dark:text-slate-100">
         {date}
       </small>
-      <p className="max-w-lg text-sm text-secondary-foreground">
-        {description}
-      </p>
+      <p className="max-w-lg text-sm text-muted-foreground">{description}</p>
     </div>
     <div>
       <div className="px-6 flex gap-2 flex-wrap">

@@ -45,7 +45,7 @@ export default function Page() {
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=="
                     className="object-cover w-full h-auto block"
                   />
-                  <p className="text-sm text-secondary-foreground">
+                  <p className="text-sm text-muted-foreground">
                     {photo.location}
                   </p>
                 </motion.div>
@@ -60,7 +60,7 @@ export default function Page() {
               Just a little&nbsp;
               <span className="text-[#438EDF]">background</span>
             </h2>
-            <p className="leading-7 text-center text-sm font-medium text-secondary-foreground">
+            <p className="leading-7 text-center text-sm font-medium text-muted-foreground">
               I am passionate about capturing incredible scenic views and also
               moments that are brimming with raw authenticity.
             </p>
@@ -99,7 +99,7 @@ export default function Page() {
               Interested in some{' '}
               <span className="text-[#438EDF]">nerdy stuff?</span>
             </h2>
-            <p className="leading-6 text-center text-sm font-medium text-secondary-foreground">
+            <p className="leading-6 text-center text-sm font-medium text-muted-foreground">
               When I&apos;m not behind a camera, I&apos;m behind a computer
               screen. I&apos;m a fullstack software engineer specialising in
               creating intuitive and user-centred interfaces <br />
@@ -119,7 +119,7 @@ export default function Page() {
               Get in&nbsp;
               <span className="text-[#438EDF]">contact</span>
             </h2>
-            <p className="leading-6 text-center text-sm font-medium text-secondary-foreground">
+            <p className="leading-6 text-center text-sm font-medium text-muted-foreground">
               Interested in talking more about anything that you see here? Feel
               free to reach out.
             </p>
