@@ -27,7 +27,7 @@ const BlogCard = ({ title, excerpt, publishDate, slug, tags }: Blog) => (
           year: 'numeric'
         })}
       </small>
-      <p className="text-sm text-slate-500">{excerpt}</p>
+      <p className="text-sm text-secondary-foreground">{excerpt}</p>
     </div>
     <div>
       <div className="px-6 flex gap-2 flex-wrap">

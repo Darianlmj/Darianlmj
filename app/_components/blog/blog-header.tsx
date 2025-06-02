@@ -5,7 +5,12 @@ import Image from 'next/image'
 const BlogHeader = ({ title, tags, publishDate, excerpt, slug }: Blog) => {
   return (
     <section className="flex flex-col gap-4">
-      <Breadcrumbs items={[{ slug: '/blog', name: 'Blog' }, { slug, name: title }]}  />
+      <Breadcrumbs
+        items={[
+          { slug: '/blog', name: 'Blog' },
+          { slug, name: title }
+        ]}
+      />
       <div className="pt-4">
         {tags.map((tag) => (
           <div className="flex gap-2 items-center pr-4" key={tag}>
@@ -26,7 +31,7 @@ const BlogHeader = ({ title, tags, publishDate, excerpt, slug }: Blog) => {
           className="absolute -right-20 -top-20 w-40 h-40 inline-block"
         />
       </h1>
-      <p className="leading-6 text-sm font-medium text-slate-500">
+      <p className="leading-6 text-sm font-medium text-secondary-foreground">
         Published on{' '}
         {new Date(publishDate).toLocaleDateString('en-GB', {
           day: '2-digit',

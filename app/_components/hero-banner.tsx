@@ -29,7 +29,7 @@ const HeroBanner = ({
               </span>
               &nbsp;{title[1]}
             </h1>
-            <p className='leading-6 [&:not(:first-child)]:mt-6 text-slate-500'>
+            <p className='leading-6 [&:not(:first-child)]:mt-6 text-slate-400'>
               {description}
             </p>
           </div>

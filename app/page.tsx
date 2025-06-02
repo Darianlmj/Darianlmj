@@ -27,7 +27,7 @@ export default function Home() {
               Nerd&nbsp;
               <span className="text-[#438EDF]">stack</span>
             </h2>
-            <p className="leading-6 text-center text-sm font-medium text-slate-500">
+            <p className="leading-6 text-center text-sm font-medium text-secondary-foreground">
               I’ve used quite a range of technology so far. I primarily work
               with TypeScript with React/Vue and Laravel, but I love to learn
               new things.
@@ -41,7 +41,7 @@ export default function Home() {
               What have I&nbsp;
               <span className="text-[#438EDF]">done</span>
             </h2>
-            <p className="leading-6 text-center text-sm font-medium text-slate-500">
+            <p className="leading-6 text-center text-sm font-medium text-secondary-foreground">
               Check out some of the things that I’ve contributed and worked on
               in the past. I’ve worked on a variety of projects, from simple
               websites designs to coding complex web applications.
@@ -53,7 +53,7 @@ export default function Home() {
               Some things I&apos;ve&nbsp;
               <span className="text-[#438EDF]">learnt</span>
             </h2>
-            <p className="leading-6 text-center text-sm font-medium text-slate-500">
+            <p className="leading-6 text-center text-sm font-medium text-secondary-foreground">
               I like to learn new things from time to time. Occasionally, I come
               across something that piques my interest and I try my best to
               document it while learning.
@@ -89,7 +89,7 @@ export default function Home() {
               Just a little&nbsp;
               <span className="text-[#438EDF]">background</span>
             </h2>
-            <p className="leading-7 text-center text-sm font-medium text-slate-500">
+            <p className="leading-7 text-center text-sm font-medium text-secondary-foreground">
               I specialise in creating intuitive and user-centred interfaces for
               a wide range of projects and experiences.
             </p>
@@ -124,7 +124,7 @@ export default function Home() {
               Interested in some{' '}
               <span className="text-[#438EDF]">photography?</span>
             </h2>
-            <p className="leading-6 text-center text-sm font-medium text-slate-500">
+            <p className="leading-6 text-center text-sm font-medium text-secondary-foreground">
               I’m also a hobbyist photographer that enjoys travel and street
               photography. I primarily shoot with a digital camera but I like to
               experiment around with other formats as well. Hoping to get my
@@ -146,7 +146,7 @@ export default function Home() {
               Get in&nbsp;
               <span className="text-[#438EDF]">contact</span>
             </h2>
-            <p className="leading-6 text-center text-sm font-medium text-slate-500">
+            <p className="leading-6 text-center text-sm font-medium text-secondary-foreground">
               Interested in talking more about anything that you see here? Feel
               free to reach out.
             </p>

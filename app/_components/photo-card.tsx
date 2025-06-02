@@ -23,11 +23,11 @@ export function PhotoCard({ photo }: { photo: Photo }) {
           <Image
             src={photo.image}
             alt={photo.alt}
-            placeholder='blur'
-            blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=='
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=="
             className="object-cover w-full h-auto block"
           />
-          <p className="text-sm text-slate-500">{photo.location}</p>
+          <p className="text-sm text-secondary-foreground">{photo.location}</p>
         </motion.div>
       </DialogTrigger>
       <DialogContent className="max-h-[90vh]">
@@ -36,8 +36,8 @@ export function PhotoCard({ photo }: { photo: Photo }) {
             <Image
               src={photo.image}
               alt={photo.alt}
-              placeholder='blur'
-              blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=='
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO89+LjfwAJGwO4McVDpwAAAABJRU5ErkJggg=="
               className={'object-contain max-h-[80vh]'}
             />
           </div>

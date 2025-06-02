@@ -5,16 +5,21 @@ publishDate: '2022-04-01'
 tags: ['Security']
 ---
 
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
 import { InfoIcon } from 'lucide-react'
 
 <div className="markdown">
 
 <div className="grid w-full my-8 items-start gap-4">
   <Alert variant="destructive" className="w-full gap-4">
-    <InfoIcon className='w-5'/>
-    <AlertTitle className="font-semibold">The contents in this article may be outdated</AlertTitle>
-    <AlertDescription>This article was made as a part of Cookies.sh – a project that I made in my university days to educate people about topics in Security.</AlertDescription>
+    <InfoIcon className="w-5" />
+    <AlertTitle className="font-semibold">
+      The contents in this article may be outdated
+    </AlertTitle>
+    <AlertDescription>
+      This article was made as a part of Cookies.sh – a project that I made in
+      my university days to educate people about topics in Security.
+    </AlertDescription>
   </Alert>
 </div>
 
@@ -40,7 +45,7 @@ import { InfoIcon } from 'lucide-react'
       <path d="M17.51 12.85 6.5 19.15" />
     </svg>
     <div className="text-lg font-semibold">Capture the Flag (CTF)</div>
-    <small className="text-slate-500 text-sm">
+    <small className="text-secondary-foreground text-sm">
       In cybersecurity, CTF competitions are exercises in which participants,
       are challenged to find and exploit vulnerabilities in a system to capture
       a "flag" or piece of information

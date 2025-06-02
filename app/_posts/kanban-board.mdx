@@ -30,8 +30,8 @@ import Kanban from '@/app/_examples/kanban-board'
       <path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z" />
       <path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" />
     </svg>
-    <div className="text-lg font-semibold">UI Component</div>
-    <small className="text-slate-500 text-sm">
+    <div className="text-lg font-semibold">Kanban board UI</div>
+    <small className="text-secondary-foreground text-sm">
       This article introduces the Kanban Board UI component. Popular in task
       tracking tools like Jira, Linear and Trello.
     </small>
@@ -55,8 +55,8 @@ import Kanban from '@/app/_examples/kanban-board'
       <path d="M16 8V6H8v2" />
       <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
     </svg>
-    <div className="text-lg font-semibold">Languages Used</div>
-    <small className="text-slate-500 text-sm">
+    <div className="text-lg font-semibold">HTML, JS & TailwindCSS</div>
+    <small className="text-secondary-foreground text-sm">
       This article will demonstrate the UI component being made using vanilla HTML and JS and styled using TailwindCSS.
     </small>
   </div>
@@ -85,25 +85,21 @@ Now that we have a set of requirements, we can start to implement it. We're goin
 1. Create a wrapper for the board.
 
 ```html showLineNumbers
-<div
-  id="kanban-board"
-  class="w-full p-8 rounded-sm flex flex-row gap-8"
-></div>
+<div id="kanban-board" class="w-full p-8 rounded-sm flex flex-row gap-8"></div>
 ```
 
 2. Let's assume our kanban board has 3 columns. `Todo`, `In Progress` and `Done` (pretty standard). This can be represented by 3 sibling divs:
 
 ```html showLineNumbers
-<div
-  id="kanban-board"
-  class="w-full p-8 rounded-sm flex flex-row gap-8"
->
+<div id="kanban-board" class="w-full p-8 rounded-sm flex flex-row gap-8">
   <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
     <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">To Do</h3>
     <div class="kanban-column-body min-h-[250px]"></div>
   </div>
   <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
-    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">In Progress</h3>
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+      In Progress
+    </h3>
     <div class="kanban-column-body min-h-[250px]"></div>
   </div>
   <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
@@ -117,10 +113,7 @@ Now that we have a set of requirements, we can start to implement it. We're goin
    Note that for each card, a **draggable** attribute is applied. This declares the card as a draggble block.
 
 ```html showLineNumbers /draggable/
-<div
-  id="kanban-board"
-  class="w-full p-8 rounded-sm flex flex-row gap-8"
->
+<div id="kanban-board" class="w-full p-8 rounded-sm flex flex-row gap-8">
   <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
     <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">To Do</h3>
     <div class="kanban-column-body min-h-[250px]">
@@ -139,7 +132,9 @@ Now that we have a set of requirements, we can start to implement it. We're goin
     </div>
   </div>
   <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
-    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">In Progress</h3>
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+      In Progress
+    </h3>
     <div class="kanban-column-body min-h-[250px]"></div>
   </div>
   <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
@@ -329,10 +324,7 @@ cards.forEach((card) => {
 Now let's put all of the code together and see what happens:
 
 ```html showLineNumbers
-<div
-  id="kanban-board"
-  class="w-full p-8 rounded-sm flex flex-row gap-8"
->
+<div id="kanban-board" class="w-full p-8 rounded-sm flex flex-row gap-8">
   <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
     <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">To Do</h3>
     <div class="kanban-column-body min-h-[250px]">
@@ -351,7 +343,9 @@ Now let's put all of the code together and see what happens:
     </div>
   </div>
   <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
-    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">In Progress</h3>
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+      In Progress
+    </h3>
     <div class="kanban-column-body min-h-[250px]"></div>
   </div>
   <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
@@ -365,7 +359,7 @@ Now let's put all of the code together and see what happens:
 
   // Get all draggable cards
   const cards = document.querySelectorAll('.kanban-card')
-  
+
   cards.forEach((card) => {
     // Handle the dragstart event
     card.addEventListener('dragstart', (e) => {
@@ -375,7 +369,7 @@ Now let's put all of the code together and see what happens:
         card.style.display = 'none'
       }, 0)
     })
-  
+
     // Handle the dragend event
     card.addEventListener('dragend', (e) => {
       setTimeout(() => {
@@ -405,11 +399,12 @@ Now let's put all of the code together and see what happens:
 
 Feel free to have a play around with the resulting Kanban Board below. Please note that due to how the code is written for simplicity, **this interactive will not work on mobile**.
 
-<Kanban/>
+<Kanban />
 
 </div>
 
 ### Resources
 
 - [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+
 </div>
