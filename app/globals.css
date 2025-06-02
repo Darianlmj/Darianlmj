@@ -72,7 +72,11 @@ body {
 }
 
 .markdown h3 {
-  @apply scroll-m-20 text-2xl font-semibold tracking-tight border-b pb-2  my-4;
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight border-b pb-2 my-4;
+}
+
+.markdown div[data-orientation] h3 {
+  @apply border-none p-0 m-0;
 }
 
 .markdown h4 {
@@ -96,7 +100,7 @@ body {
 }
 
 .markdown span[data-highlighted-line] {
-  @apply bg-slate-200 dark:bg-slate-900
+  @apply bg-slate-200 dark:bg-slate-900;
 }
 
 .markdown a {
@@ -104,23 +108,23 @@ body {
 }
 
 .markdown strong {
-  @apply  text-slate-700 dark:text-slate-400
+  @apply text-slate-700 dark:text-slate-400;
 }
 
 .markdown table {
-  @apply w-full
+  @apply w-full;
 }
 
 .markdown tr {
-  @apply even:bg-muted m-0 border-t p-0
+  @apply even:bg-muted m-0 border-t p-0;
 }
 
 .markdown th {
-  @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right
+  @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
 }
 
 .markdown td {
-  @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right
+  @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
 }
 
 figure[data-rehype-pretty-code-figure] pre {
@@ -130,7 +134,7 @@ figure[data-rehype-pretty-code-figure] pre {
 code[data-line-numbers] {
   counter-reset: line;
 }
- 
+
 code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
@@ -141,6 +145,6 @@ code[data-line-numbers] > [data-line]::before {
   color: gray;
 }
 
-div[role="alert"] {
-  @apply dark:text-red-500 dark:border-red-500 [&>svg]:dark:text-red-500
+div[role='alert'] {
+  @apply dark:text-red-500 dark:border-red-500 [&>svg]:dark:text-red-500;
 }

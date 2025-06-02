@@ -6,6 +6,15 @@ tags: ['Frontend']
 ---
 
 import Kanban from '@/app/_examples/kanban-board'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
+import { InfoIcon } from 'lucide-react'
+import Image from 'next/image'
 
 <div className="markdown">
 
@@ -149,7 +158,7 @@ Now that we have a set of requirements, we can start to implement it. We're goin
 This is where the magic happens. We'll be utilising the HTML Drag and Drop API to make this work. But before I get into the main logic, let's take a step back and understand what API's are going to be involved.
 In this API, there are a few events that we'll have to get familiar with:
 
-<div className="my-6 w-full overflow-y-auto">
+<div className="my-6 w-full">
   <table>
     <thead>
       <tr>
@@ -319,9 +328,7 @@ cards.forEach((card) => {
 })
 ```
 
-### The result
-
-Now let's put all of the code together and see what happens:
+7. Now let's put all of the code together and see what happens:
 
 ```html showLineNumbers
 <div id="kanban-board" class="w-full p-8 rounded-sm flex flex-row gap-8">
@@ -397,14 +404,380 @@ Now let's put all of the code together and see what happens:
 </script>
 ```
 
-Feel free to have a play around with the resulting Kanban Board below. Please note that due to how the code is written for simplicity, **this interactive will not work on mobile**.
+<Accordion type="single" collapsible className="py-4">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>
+      <span className="text-muted-foreground font-bold pr-4">Bonus</span> Mobile
+      drag and drop
+    </AccordionTrigger>
+    <AccordionContent>
+      <div className="grid w-full mb-8 items-start gap-4">
+        <Alert variant="destructive" className="w-full gap-4">
+          <InfoIcon className="w-5" />
+          <AlertTitle className="font-semibold">
+            Not supported on Safari browsers
+          </AlertTitle>
+          <AlertDescription>
+            Please take note that the API used in the following content is unsupported on Safari and will probably not work if you tried running it there.
+          </AlertDescription>
+        </Alert>
+      </div>
 
-<Kanban />
+      Now you might have noticed that the code above does not actually work on
+      mobile screens. This is because mobile drag and drop uses a different set
+      of event listeners compared to desktops. These events are categorised
+      under [Touch
+      Events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events).
+
+      We can do a bit of modifications to support this. Again, we have to familiarise ourselves with the different events
+      that we'll have to handle:
+
+      <div className="my-6 w-full">
+        <table>
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Fires when...</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a
+                  href="/en-US/docs/Web/API/HTMLElement/dragend_event"
+                  title="dragend"
+                >
+                  <code>touchstart</code>
+                </a>
+              </td>
+              <td>
+                ...a when one or more touch points are placed on the touch surface.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="/en-US/docs/Web/API/HTMLElement/dragover_event"
+                  title="dragover"
+                >
+                  <code>touchmove</code>
+                </a>
+              </td>
+              <td>
+                ...when one or more touch points are moved along the touch surface.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="/en-US/docs/Web/API/HTMLElement/dragstart_event"
+                  title="dragstart"
+                >
+                  <code>touchend</code>
+                </a>
+              </td>
+              <td>
+                ...when one or more touch points are removed from the touch surface. Remember that it is possible to get a touchcancel event instead.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      #### The HTML
+
+      There's only one thing that we'll have to change about the HTML. For the cards, we'll need to apply the CSS class `touch-pointer: none;` to it.
+      Without this, when we try to drag a card, the `touchmove` event also registers the same as the scrolling on the page. This prevents the card from actually being dragged and instead, you'll see your screen scrolling.
+
+      ```html showLineNumbers /touch-none/
+        <div
+          class="kanban-card touch-none font-semibold border-l-4 border-l-blue-500 shadow-sm bg-white dark:bg-slate-600 transition-all ease-in-out duration-100 hover:bg-slate-200 dark:hover:bg-slate-600 p-4 mb-4 cursor-move"
+          draggable
+        >
+          Task 1
+        </div>
+        <div
+          class="kanban-card touch-none font-semibold border-l-4 border-l-blue-500 shadow-sm bg-white dark:bg-slate-600 transition-all ease-in-out duration-100 hover:bg-slate-200 dark:hover:bg-slate-600 p-4 mb-4 cursor-move"
+          draggable
+        >
+          Task 2
+        </div>
+      ```
+
+      #### The JavaScript
+
+      1. Let's handle the `touchstart` event first. This event fires as soon as your finger makes contact with the position of the screen where the card is located.
+
+      ```js showLineNumbers
+      card.addEventListener('touchstart', (e) => {
+        // Set the current reference to be the card that is selected.
+        draggedCard = card
+        // Decreasing the opacity of the card so that the user has feedback that something is happening to the card at the moment.
+        card.style.opacity = '0.5'
+      })
+      ```
+
+      2. Now, let's handle the `touchend` event.
+
+      ```js showLineNumbers
+      card.addEventListener('touchend', (e) => {
+        // Gets the point where the element is being dropped
+        const touch = e.changedTouches[0]
+        const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+
+        // If there is a target and the target happens to be a column body, then we can append the card to it.
+        if (dropTarget && dropTarget.classList.contains('kanban-column-body')) {
+          dropTarget.appendChild(draggedCard);
+        }
+
+        // After appending the dragged card, we should reset it's style and
+        // reset the reference card to enable another card to be dragged.
+        if (draggedCard) {
+          draggedCard.style.opacity = '1'
+          draggedCard = null
+        }
+      })
+      ```
+
+      3. This should now enable you to perform drag and drop on mobile. However you may be wondering why isn't there a ghost card like what you see on desktop screens?
+      This is because by default, mobile does not support rendering a ghost card. So we'll have to create one (not really, but we want to make this user experience friendlier.).
+      Let's start by declaring a new reference for our ghost card.
+
+      ```js showLineNumbers
+      let ghostCardRef = null
+      ```
+
+      4. Now, when the `touchstart` fires, we'll have to make a copy of the same card that is being selected.
+
+      ```js showLineNumbers {7-22}
+      card.addEventListener('touchstart', (e) => {
+        // Set the current reference to be the card that is selected.
+        draggedCard = card
+        // Decreasing the opacity of the card so that the user has feedback that something is happening to the card at the moment.
+        card.style.opacity = '0.5'
+
+        // Create a ghost card by cloning it
+        ghostCardRef = card.cloneNode(true);
+        ghostCardRef.style.position = 'fixed' // Ensures that the ghost card will follow the finger when dragged
+        ghostCardRef.style.pointerEvents = 'none' // Ensures that only dragging happens, not scrolling
+        ghostCardRef.style.opacity = '0.8' // Differentiates between the ghost card and the original card when dragged
+        ghostCardRef.style.zIndex = '10' // Allows dragging across different elements without overlaping with them
+        ghostCardRef.style.width = `${card.offsetWidth}px` // Ensures that the ghost card has the same width as the original
+        document.body.appendChild(ghostCardRef) // Append the ghost card to the DOM
+
+        // In order to make the ghost card appear at the spot of the original,
+        // we need the x and y coordinates of the original card relative to the viewport
+        // The reason for dividing by 2 is to center the ghost element horizontally relative to the touch point.
+        // If you didn't divide by 2, the ghost element would be offset to the right by half its own width.
+        const touch = e.touches[0]
+        ghostCardRef.style.top = `${touch.clientY - card.offsetHeight / 2}px`
+        ghostCardRef.style.left = `${touch.clientX - card.offsetWidth / 2}px`
+      })
+      ```
+
+      5. Now we need to handle the logic for when the ghost card moves
+
+      ```js showLineNumbers
+      card.addEventListener('touchmove', (e) => {
+        // Moves the ghost card (if there is one) relative to the finger
+        const touch = e.touches[0]
+        if (ghostCardRef) {
+          ghostCardRef.style.top = `${touch.clientY - card.offsetHeight / 2}px`
+          ghostCardRef.style.left = `${touch.clientX - card.offsetWidth / 2}px`
+        }
+      })
+      ```
+
+      6. Finally, we'll have to clean up the ghost card when the touch event ends
+
+      ```js showLineNumbers {11-16}
+      card.addEventListener('touchend', (e) => {
+        // Gets the point where the element is being dropped
+        const touch = e.changedTouches[0]
+        const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+
+        // If there is a target and the target happens to be a column body, then we can append the card to it.
+        if (dropTarget && dropTarget.classList.contains('kanban-column-body')) {
+          dropTarget.appendChild(draggedCard);
+        }
+
+        // Removes the ghost card from the DOM and reset the
+        // reference to the ghost card to enable another ghost card to be created and dragged in the future.
+        if (ghostCardRef) {
+          ghostCardRef.remove()
+          ghostCardRef = null
+        }
+
+        // After appending the dragged card, we should reset it's style and
+        // reset the reference card to enable another card to be dragged.
+        if (draggedCard) {
+          draggedCard.style.opacity = '1'
+          draggedCard = null
+        }
+      })
+      ```
+
+      7. Putting everything we have so far will give us
+
+      ```html showLineNumbers /touch-none/ {33,57-113}
+      <div id="kanban-board" class="w-full p-8 rounded-sm flex flex-row gap-8">
+        <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+          <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">To Do</h3>
+          <div class="kanban-column-body min-h-[250px]">
+            <div
+              class="kanban-card touch-none font-semibold border-l-4 border-l-blue-500 shadow-sm bg-white dark:bg-slate-600 transition-all ease-in-out duration-100 hover:bg-slate-200 dark:hover:bg-slate-600 p-4 mb-4 cursor-move"
+              draggable
+            >
+              Task 1
+            </div>
+            <div
+              class="kanban-card touch-none font-semibold border-l-4 border-l-blue-500 shadow-sm bg-white dark:bg-slate-600 transition-all ease-in-out duration-100 hover:bg-slate-200 dark:hover:bg-slate-600 p-4 mb-4 cursor-move"
+              draggable
+            >
+              Task 2
+            </div>
+          </div>
+        </div>
+        <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+          <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+            In Progress
+          </h3>
+          <div class="kanban-column-body min-h-[250px]"></div>
+        </div>
+        <div class="kanban-column flex-1 px-8 rounded-sm min-h-[300px] bg-secondary">
+          <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">Done</h3>
+          <div class="kanban-column-body min-h-[250px]"></div>
+        </div>
+      </div>
+
+      <script>
+        let draggedCard = null
+        let ghostCardRef = null
+
+        // Get all draggable cards
+        const cards = document.querySelectorAll('.kanban-card')
+
+        cards.forEach((card) => {
+          // Handle the dragstart event
+          card.addEventListener('dragstart', (e) => {
+            draggedCard = card
+            setTimeout(() => {
+              // Hide the original card while dragging
+              card.style.display = 'none'
+            }, 0)
+          })
+
+          // Handle the dragend event
+          card.addEventListener('dragend', (e) => {
+            setTimeout(() => {
+              // Show after drop
+              card.style.display = 'block'
+              draggedCard = null
+            }, 0)
+          })
+
+          card.addEventListener('touchstart', (e) => {
+            // Set the current reference to be the card that is selected.
+            draggedCard = card
+            // Decreasing the opacity of the card so that the user has feedback that something is happening to the card at the moment.
+            card.style.opacity = '0.5'
+
+            // Create a ghost card by cloning it
+            ghostCardRef = card.cloneNode(true);
+            ghostCardRef.style.position = 'fixed' // Ensures that the ghost card will follow the finger when dragged
+            ghostCardRef.style.pointerEvents = 'none' // Ensures that only dragging happens, not scrolling
+            ghostCardRef.style.opacity = '0.8' // Differentiates between the ghost card and the original card when dragged
+            ghostCardRef.style.zIndex = '10' // Allows dragging across different elements without overlaping with them
+            ghostCardRef.style.width = `${card.offsetWidth}px` // Ensures that the ghost card has the same width as the original
+            document.body.appendChild(ghostCardRef) // Append the ghost card to the DOM
+
+            // In order to make the ghost card appear at the spot of the original,
+            // we need the x and y coordinates of the original card relative to the viewport
+            // The reason for dividing by 2 is to center the ghost element horizontally relative to the touch point.
+            // If you didn't divide by 2, the ghost element would be offset to the right by half its own width.
+            const touch = e.touches[0]
+            ghostCardRef.style.top = `${touch.clientY - card.offsetHeight / 2}px`
+            ghostCardRef.style.left = `${touch.clientX - card.offsetWidth / 2}px`
+          })
+
+          card.addEventListener('touchmove', (e) => {
+            // Moves the ghost card (if there is one) relative to the finger
+            const touch = e.touches[0]
+            if (ghostCardRef) {
+              ghostCardRef.style.top = `${touch.clientY - card.offsetHeight / 2}px`
+              ghostCardRef.style.left = `${touch.clientX - card.offsetWidth / 2}px`
+            }
+          })
+
+          card.addEventListener('touchend', (e) => {
+            // Gets the point where the element is being dropped
+            const touch = e.changedTouches[0]
+            const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+
+            // If there is a target and the target happens to be a column body, then we can append the card to it.
+            if (dropTarget && dropTarget.classList.contains('kanban-column-body')) {
+              dropTarget.appendChild(draggedCard);
+            }
+
+            // Removes the ghost card from the DOM and reset the
+            // reference to the ghost card to enable another ghost card to be created and dragged in the future.
+            if (ghostCardRef) {
+              ghostCardRef.remove()
+              ghostCardRef = null
+            }
+
+            // After appending the dragged card, we should reset it's style and
+            // reset the reference card to enable another card to be dragged.
+            if (draggedCard) {
+              draggedCard.style.opacity = '1'
+              draggedCard = null
+            }
+          })
+        })
+
+        // Get all column drop areas
+        const columns = document.querySelectorAll('.kanban-column-body')
+        columns.forEach((column) => {
+          column.addEventListener('dragover', (e) => {
+            // Allows dropping the cards
+            e.preventDefault()
+          })
+
+          column.addEventListener('drop', (e) => {
+            if (draggedCard) {
+              column.appendChild(draggedCard)
+            }
+          })
+        })
+      </script>
+      ```
+    </AccordionContent>
+
+  </AccordionItem>
+</Accordion>
+
+### Demo Time
+
+Feel free to have a play around with the resulting Kanban Board below. Please note
+that due to how the code is written for simplicity, **this interactive will not work
+on mobile**.
+
+<div className="relative py-28">
+  <Image
+    src="/assets/illustrations/try_me_out.webp"
+    alt="Try me out"
+    width={40}
+    height={40}
+    className="absolute -right-8 -top-20 w-80 h-80 inline-block"
+  />
+  <Kanban />
+</div>
 
 </div>
 
 ### Resources
 
 - [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [Touch Events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
 
 </div>
