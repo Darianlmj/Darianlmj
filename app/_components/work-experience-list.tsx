@@ -42,10 +42,10 @@ const WorkExperienceList = () => {
           <div className="w-full">
             <div className="flex flex-col lg:flex-row justify-between">
               <h4 className="text-sm font-semibold">{job.company}</h4>
-              <p className="text-sm text-secondary-foreground">{job.date}</p>
+              <p className="text-sm text-muted-foreground">{job.date}</p>
             </div>
             <div>
-              <p className="text-sm text-secondary-foreground">{job.role}</p>
+              <p className="text-sm text-muted-foreground">{job.role}</p>
             </div>
           </div>
         </div>

@@ -86,9 +86,7 @@ const Contact = ({ name, handle, link, icon }: Item) => {
               <span className="text-sm text-slate-900 dark:text-slate-100">
                 {name}
               </span>
-              <span className="text-sm text-secondary-foreground">
-                {handle}
-              </span>
+              <span className="text-sm text-muted-foreground">{handle}</span>
             </figcaption>
           </div>
         </div>

@@ -31,7 +31,7 @@ const BlogHeader = ({ title, tags, publishDate, excerpt, slug }: Blog) => {
           className="absolute -right-20 -top-20 w-40 h-40 inline-block"
         />
       </h1>
-      <p className="leading-6 text-sm font-medium text-secondary-foreground">
+      <p className="leading-6 text-sm font-medium text-muted-foreground">
         Published on{' '}
         {new Date(publishDate).toLocaleDateString('en-GB', {
           day: '2-digit',

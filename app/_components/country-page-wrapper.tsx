@@ -59,7 +59,7 @@ const CountryPageWrapper = ({ country }: { country: string }) => {
           Get in&nbsp;
           <span className="text-[#438EDF]">contact</span>
         </h2>
-        <p className="leading-6 text-center text-sm font-medium text-secondary-foreground">
+        <p className="leading-6 text-center text-sm font-medium text-muted-foreground">
           Interested in talking more about anything that you see here? Feel free
           to reach out.
         </p>

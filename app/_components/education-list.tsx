@@ -38,12 +38,10 @@ const EducationList = () => {
           <div className="w-full">
             <div className="flex flex-col sm:flex-row justify-between">
               <h4 className="text-sm font-semibold">{education.school}</h4>
-              <p className="text-sm text-secondary-foreground">
-                {education.date}
-              </p>
+              <p className="text-sm text-muted-foreground">{education.date}</p>
             </div>
             <div>
-              <p className="text-sm text-secondary-foreground">
+              <p className="text-sm text-muted-foreground">
                 {education.qualification}
               </p>
             </div>
