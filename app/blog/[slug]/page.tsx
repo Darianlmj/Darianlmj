@@ -1,6 +1,7 @@
 import BlogAside from "@/app/_components/blog/blog-aside";
+import BlogComments from "@/app/_components/blog/blog-comments";
 import BlogHeader from "@/app/_components/blog/blog-header";
-import BlogPostTeasers from "@/app/_components/blog/blog-post-teasers";
+// import BlogPostTeasers from "@/app/_components/blog/blog-post-teasers";
 import { Blog } from "@/app/_data/blogs";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
@@ -36,9 +37,12 @@ export default async function Post({ params }: Params) {
         </article>
         <BlogAside headings={headings} />
       </div>
-      <div className="flex container mx-auto items-start p-8 gap-8 sm:px-32 mb-32">
-        <BlogPostTeasers />
+      <div className="flex container mx-auto sm:px-32 mb-32">
+        <BlogComments />
       </div>
+      {/* <div className="flex container mx-auto items-start p-8 gap-8 sm:px-32 mb-32">
+        <BlogPostTeasers />
+      </div> */}
     </main>
   );
 }
