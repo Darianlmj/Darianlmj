@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 interface Heading {
   id: string
@@ -15,9 +15,41 @@ type BlogAsideProps = {
 const BlogAside = ({ headings }: BlogAsideProps) => {
   const [activeId, setActiveId] = useState<string | null>(null)
 
-  const handleClick = (id: string) => {
-    setActiveId(id)
-  }
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id')
+            if (id) {
+              setActiveId(id)
+            }
+          }
+        })
+      },
+      {
+        rootMargin: '0px 0px -80% 0px', // Trigger when heading is 30% from top
+        threshold: 1.0,
+      }
+    )
+
+    // Flatten all heading IDs into a single list
+    const allIds = headings.flatMap((h) => [
+      h.id,
+      ...h.subHeadings.map((sh) => sh.id),
+    ])
+
+    allIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) {
+        observer.observe(el)
+      }
+    })
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [headings])
 
   return (
     <aside className="order-last hidden shrink-0 lg:block w-56 gap-4 px-8 min-h-screen sticky top-16">
@@ -29,7 +61,6 @@ const BlogAside = ({ headings }: BlogAsideProps) => {
           <div key={id} className="flex flex-col gap-2">
             <a
               href={`#${id}`}
-              onClick={() => handleClick(id)}
               className={`text-md transition-colors ${
                 activeId === id
                   ? 'text-blue-500 font-semibold'
@@ -44,7 +75,6 @@ const BlogAside = ({ headings }: BlogAsideProps) => {
                   <a
                     key={id}
                     href={`#${id}`}
-                    onClick={() => handleClick(id)}
                     className={`text-md transition-colors ${
                       activeId === id
                         ? 'text-blue-500 font-semibold'
